@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đề Ôn Tập Tiếng Anh Unit 1, 2, 3 - Ms Lê Hằng English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-purple: #7952B3;
+      --primary-coral: #FF5E62;
+      --primary-yellow: #FFD166;
+      --primary-cyan: #06D6A0;
+      --accent-blue: #0984E3;
+      --correct-green: #00BA66;
+      --correct-bg: #E8F8F0;
+      --wrong-red: #FA5252;
+      --wrong-bg: #FFEAEA;
+      --card-bg: #FFFFFF;
+      --text-main: #2D3436;
+      --text-muted: #636E72;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #FFEFBA 0%, #FFDFBA 8%, #E3F2FD 35%, #CBE3F7 70%, #A0C4E2 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+      color: var(--text-main);
+      padding-bottom: 120px;
+    }
+
+    /* Ambient Skyline & Road Decorations */
+    .city-skyline {
+      position: fixed;
+      bottom: 45px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.32;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: 400px 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' width='400' height='120'%3E%3Cpath fill='%236C8EB5' d='M0,120 L0,60 L20,60 L20,30 L50,30 L50,120 L70,120 L70,45 L100,45 L100,120 L130,120 L130,15 L160,15 L160,120 L190,120 L190,50 L220,50 L220,120 L250,120 L250,25 L280,25 L280,120 L310,120 L310,40 L340,40 L340,120 L370,120 L370,55 L400,55 L400,120 Z'/%3E%3C/svg%3E");
+    }
+
+    .bottom-road {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 46px;
+      background: #4A4A4A;
+      border-top: 6px solid #00BA66;
+      z-index: 1;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    }
+    .road-curb {
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FF4757 0px, #FF4757 24px, #FFFFFF 24px, #FFFFFF 48px);
+    }
+    .road-lines {
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg, #FFFFFF 0px, #FFFFFF 35px, transparent 35px, transparent 70px);
+      opacity: 0.85;
+    }
+
+    /* Floating Clouds */
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .floating-cloud {
+      position: absolute;
+      opacity: 0.45;
+      animation: floatCloud 25s linear infinite;
+    }
+    @keyframes floatCloud {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(110vw); }
+    }
+
+    /* Main Container */
+    .app-container {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 16px 14px;
+    }
+
+    /* Top Compact Teacher Announcement Banner */
+    .top-announcement {
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 12px;
+      border: 1.5px solid #FFDEE9;
+    }
+    .announcement-text {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .teacher-badge {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      color: #FFF;
+      padding: 3px 12px;
+      border-radius: 18px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header Unit Banner */
+    .unit-hero-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(116, 185, 255, 0.18);
+      border: 2px solid #E3F2FD;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(90deg, #0984E3, #00CEC9);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .unit-title {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #2D3436;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .unit-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #636E72;
+    }
+    .unit-icon-box {
+      width: 90px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #E0F7FA, #FFF9C4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 2px solid #FFFFFF;
+    }
+
+    /* Top Sticky Stats Bar */
+    .top-stats-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 10px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border: 2px solid #FFF0F5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .pill-counter-left {
+      background: #FF5E62;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #D63031;
+    }
+    .bar-track {
+      flex: 1;
+      height: 16px;
+      background: #EBF3FA;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #E1EDF8;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FDCB6E, #00D26A);
+      border-radius: 10px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pill-counter-right {
+      background: #00D26A;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Urgent Reminder Card */
+    .warning-box {
+      background: #FFF9E6;
+      border: 3px dashed #FDCB6E;
+      border-left: 8px solid #F39C12;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(243, 156, 18, 0.12);
+    }
+    .warning-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #D35400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .warning-text {
+      font-size: 0.95rem;
+      color: #4A3E1F;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+    .warning-subtext {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: #C0392B;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       READING PASSAGE BLOCK (EXPLICIT DISPLAY BEFORE QUESTIONS)
+       ========================================================= */
+    .reading-passage-card {
+      background: #FFFDF8;
+      border: 3px solid #FDCB6E;
+      border-radius: 26px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 28px rgba(253, 203, 110, 0.25);
+      position: relative;
+    }
+    .passage-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #F1C40F;
+    }
+    .passage-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #D35400;
+    }
+    .passage-scope-badge {
+      background: #F39C12;
+      color: #FFF;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 14px;
+      box-shadow: 0 2px 0 #D35400;
+    }
+    .passage-intro-text {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #4B4B4B;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .passage-blank {
+      display: inline-block;
+      min-width: 70px;
+      padding: 1px 8px;
+      margin: 0 4px;
+      background: #FFF3CD;
+      border: 1.5px dashed #F39C12;
+      border-radius: 8px;
+      font-weight: 900;
+      color: #D35400;
+      text-align: center;
+    }
+    .passage-prompt-banner {
+      margin-top: 16px;
+      background: linear-gradient(90deg, #0984E3, #00CEC9);
+      color: #FFF;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Embedded passage toggle inside question cards */
+    .btn-toggle-passage {
+      background: #EDF2F7;
+      color: #2B6CB0;
+      border: 1.5px solid #CBD5E0;
+      border-radius: 12px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+    .btn-toggle-passage:hover {
+      background: #E2E8F0;
+      border-color: #0984E3;
+      color: #0984E3;
+    }
+    .collapse-passage-box {
+      display: none;
+      background: #FFFDF9;
+      border: 2px dashed #CBD5E0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* Quiz Card */
+    .quiz-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 3px solid #F0F4F8;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .quiz-card:hover {
+      box-shadow: 0 14px 38px rgba(116, 185, 255, 0.2);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .q-number-pill {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 3px 0 #0767B1;
+    }
+    .q-tag-pill {
+      background: #FFF3E0;
+      color: #E65100;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: 1px solid #FFE0B2;
+    }
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #2D3436;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+    .q-text u, .opt-text u {
+      color: #FF3838;
+      font-weight: 900;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+
+    /* 3D Option Buttons */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 600px) {
+      .options-grid.grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .option-btn {
+      position: relative;
+      background: #FFFFFF;
+      border: 2.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #2D3436;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 5px 0 #CBD5E1;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+    }
+    .option-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.015);
+      border-color: #0984E3;
+      box-shadow: 0 7px 0 #0767B1;
+      background: #F8FBFE;
+    }
+    .option-btn:active:not(:disabled) {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #CBD5E1;
+    }
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #F1F2F6;
+      color: #57606F;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Option States */
+    .option-btn.selected-correct {
+      background: #E8F8F0 !important;
+      border-color: var(--correct-green) !important;
+      color: #0E6251 !important;
+      box-shadow: 0 5px 0 #00A853 !important;
+    }
+    .option-btn.selected-correct .opt-key {
+      background: var(--correct-green) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.selected-wrong {
+      background: #FFEAEA !important;
+      border-color: var(--wrong-red) !important;
+      color: #922B21 !important;
+      box-shadow: 0 5px 0 #D63031 !important;
+      animation: shakeAnim 0.4s ease-in-out;
+    }
+    .option-btn.selected-wrong .opt-key {
+      background: var(--wrong-red) !important;
+      color: #FFFFFF !important;
+    }
+
+    .option-btn.show-truth {
+      border-color: var(--correct-green) !important;
+      background: #F0FFF4 !important;
+      box-shadow: 0 4px 0 #00A853 !important;
+    }
+    .option-btn.show-truth .opt-key {
+      background: #00BA66 !important;
+      color: #FFF !important;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    /* Visual Sign Containers */
+    .visual-wrapper {
+      margin: 16px 0 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .traffic-sign-box {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 12px solid #E84118;
+      background: #FFFFFF;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .traffic-sign-box::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 12px;
+      background: #E84118;
+      transform: rotate(45deg);
+      border-radius: 6px;
+    }
+    .blue-circle-sign {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #0984E3;
+      border: 6px solid #FFFFFF;
+      box-shadow: 0 8px 20px rgba(9, 132, 227, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 8px;
+    }
+    .notice-plate-sign {
+      width: 100%;
+      max-width: 260px;
+      border: 4px solid #2F3542;
+      border-radius: 12px;
+      background: #FFFFFF;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .notice-plate-header {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.25rem;
+      padding: 6px;
+      letter-spacing: 2px;
+    }
+    .notice-plate-body {
+      padding: 12px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #2D3436;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Explanation Container */
+    .explanation-container {
+      display: none;
+      margin-top: 20px;
+      background: #FFFFFF;
+      border: 2px dashed #FFB8B8;
+      border-radius: 22px;
+      padding: 20px;
+      position: relative;
+      animation: slideInDown 0.35s ease;
+      box-shadow: 0 6px 20px rgba(255, 94, 98, 0.08);
+    }
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FF5E62;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .exp-trans-box {
+      background: #FFFDF0;
+      border-left: 6px solid #FDCB6E;
+      border-radius: 16px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2D3436;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(253, 203, 110, 0.15);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .exp-section-title {
+      font-weight: 900;
+      font-size: 1rem;
+      color: #2D3436;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 620px) {
+      .exp-grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .exp-card-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+    .exp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .card-word {
+      font-weight: 800;
+      font-size: 1.02rem;
+    }
+    .card-word.word-wrong {
+      color: #0984E3;
+    }
+    .card-word.word-correct {
+      color: #00BA66;
+    }
+
+    .badge-pill {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-pill-wrong {
+      background: #F1F2F6;
+      color: #57606F;
+    }
+    .badge-pill-correct {
+      background: #E8F8F0;
+      color: #00A853;
+      border: 1px solid #A3E9C3;
+    }
+    .card-meaning {
+      color: #B33939;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .exp-block {
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .rule-tag {
+      background: #FFF3CD;
+      color: #856404;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-right: 6px;
+      display: inline-block;
+    }
+    .highlight-green-tag {
+      background: #D4EDDA;
+      color: #155724;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .wrong-key-pill {
+      background: #FFEAEA;
+      color: #D63031;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 8px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    /* Submit Area */
+    .submit-area {
+      text-align: center;
+      margin: 35px 0 60px 0;
+    }
+    .btn-submit-main {
+      background: #00D26A;
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      font-weight: 900;
+      padding: 16px 48px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #00A853, 0 14px 25px rgba(0, 210, 106, 0.4);
+      transition: all 0.15s ease;
+      letter-spacing: 0.5px;
+    }
+    .btn-submit-main:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 11px 0 #00A853, 0 18px 30px rgba(0, 210, 106, 0.45);
+    }
+    .btn-submit-main:active {
+      transform: translateY(4px);
+      box-shadow: 0 3px 0 #00A853;
+    }
+
+    /* Score Modal Popup */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 52, 54, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+    .modal-overlay.active {
+      display: flex;
+      animation: modalFadeIn 0.3s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .score-modal {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      border: 4px solid #0984E3;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes modalPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .modal-trophy {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: bounceTrophy 1.5s infinite ease-in-out;
+    }
+    @keyframes bounceTrophy {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .score-huge {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #0984E3;
+      margin: 10px 0;
+      line-height: 1;
+    }
+    .score-fraction {
+      font-size: 1.2rem;
+      color: #636E72;
+      font-weight: 800;
+    }
+    .feedback-box {
+      background: #F8F9FE;
+      border: 2px dashed #0984E3;
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .feedback-teacher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-weight: 900;
+      color: #0984E3;
+      font-size: 1rem;
+    }
+    .feedback-quote {
+      font-size: 1.02rem;
+      color: #2D3436;
+      line-height: 1.55;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .btn-modal-close {
+      background: #0984E3;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 14px 34px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0767B1;
+      transition: all 0.15s ease;
+      margin: 6px;
+    }
+    .btn-modal-close:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 0 #0767B1;
+    }
+    .btn-modal-close:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #0767B1;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    @media (max-width: 600px) {
+      .app-container { padding: 10px; }
+      .quiz-card { padding: 18px 14px; }
+      .q-text { font-size: 1.05rem; }
+      .option-btn { font-size: 0.95rem; padding: 12px 14px; }
+      .btn-submit-main { font-size: 1.1rem; padding: 14px 32px; }
+      .unit-title { font-size: 1.35rem; }
+      .reading-passage-card { padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="bg-elements" id="bgElements"></div>
+  <div class="city-skyline"></div>
+  <div class="bottom-road">
+    <div class="road-curb"></div>
+    <div class="road-lines"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Top Compact Teacher Announcement Banner -->
+    <div class="top-announcement">
+      <div class="announcement-text">
+        <span>👩‍🏫 Giáo viên tạo: <strong>Ms Lê Hằng English</strong></span>
+        <span class="teacher-badge">Master of English</span>
+      </div>
+      <div style="font-size: 0.82rem; color: #FF5E62; font-weight: 800;">
+        ⚡ B. REFERENCE EXERCISES (70 CÂU)
+      </div>
+    </div>
+
+    <!-- Header Unit Banner -->
+    <div class="unit-hero-card">
+      <div>
+        <div class="unit-badge">
+          <span>🚇 UNIT 1, 2, 3 · ENGLISH REFERENCE EXERCISES</span>
+        </div>
+        <h1 class="unit-title">Tổng Ôn Toàn Diện Unit 1 - 2 - 3</h1>
+        <div class="unit-subtitle">
+          Ngữ âm · Trọng âm · Ngữ pháp & Từ vựng · Biển báo · Đọc hiểu · Viết câu
+        </div>
+      </div>
+      <div class="unit-icon-box">
+        🏙️
+      </div>
+    </div>
+
+    <!-- Top Sticky Bar -->
+    <div class="top-stats-bar">
+      <div class="pill-counter-left" id="starCounter">
+        <span>⭐</span>
+        <span id="correctScore">0</span><span>/70</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progressBar"></div>
+      </div>
+      <div class="pill-counter-right" id="progressPill">
+        <span id="answeredCount">0</span><span>/70</span>
+      </div>
+    </div>
+
+    <!-- Urgent Warning Box -->
+    <div class="warning-box">
+      <div class="warning-title">
+        <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+      </div>
+      <div class="warning-text">
+        Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên.
+      </div>
+      <div class="warning-subtext">
+        👉 Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!<br>
+        👇 <strong>Kéo tới đâu, làm tới đó! *</strong>
+      </div>
+    </div>
+
+    <!-- Quiz Cards Container -->
+    <div id="quizContainer">
+      <!-- Passages and 70 Questions rendered dynamically -->
+    </div>
+
+    <!-- Submit Area -->
+    <div class="submit-area">
+      <button class="btn-submit-main" id="btnSubmit" onclick="calculateAndShowResult()">
+        🎉 NỘP BÀI & XEM TỔNG KẾT 🎉
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Score Modal Popup -->
+  <div class="modal-overlay" id="scoreModal">
+    <div class="score-modal">
+      <div class="modal-trophy" id="modalTrophy">🏆</div>
+      <h2 style="color: #2D3436; font-size: 1.5rem; font-weight: 900;">KẾT QUẢ BÀI THI</h2>
+      <div class="score-huge" id="modalPercent">100%</div>
+      <div class="score-fraction" id="modalFraction">Đúng 70 / 70 câu</div>
+
+      <div class="feedback-box">
+        <div class="feedback-teacher">
+          <span>👩‍🏫 Lời nhận xét từ <strong>Ms Lê Hằng English</strong>:</span>
+        </div>
+        <div class="feedback-quote" id="modalTeacherQuote">
+          "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!"
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-modal-close" onclick="closeModal()">Đóng & Xem lại bài</button>
+        <button class="btn-modal-close" style="background: #00C9A7; box-shadow: 0 5px 0 #009688;" onclick="restartQuiz()">Làm lại bài thi 🔄</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* AUDIO GENERATION ENGINE */
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playDing() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'triangle';
+      osc1.frequency.setValueAtTime(659.25, now);
+      gain1.gain.setValueAtTime(0.25, now);
+      gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.35);
+
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(987.77, now + 0.1);
+      gain2.gain.setValueAtTime(0.3, now + 0.1);
+      gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.start(now + 0.1);
+      osc2.stop(now + 0.6);
+    }
+
+    function playWrongSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const now = audioCtx.currentTime;
+
+      const notes = [320, 260, 210];
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now + i * 0.14);
+        gain.gain.setValueAtTime(0.2, now + i * 0.14);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i + 1) * 0.14);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.14);
+        osc.stop(now + (i + 1) * 0.14);
+      });
+    }
+
+    /* CONFETTI BURST EFFECT */
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 70) {
+      const colors = ['#0984E3', '#FDCB6E', '#00C9A7', '#00D26A', '#FF4757', '#FF9FF3', '#6C5CE7'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 320,
+          y: window.innerHeight * 0.35 + (Math.random() - 0.5) * 100,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 14,
+          vy: Math.random() * -12 - 5,
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 12,
+          gravity: 0.35,
+          opacity: 1
+        });
+      }
+      if (!isAnimatingConfetti) {
+        animateConfetti();
+      }
+    }
+
+    let isAnimatingConfetti = false;
+    function animateConfetti() {
+      if (confettiParticles.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isAnimatingConfetti = false;
+        return;
+      }
+      isAnimatingConfetti = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.rot += p.rotSpeed;
+        p.opacity -= 0.012;
+
+        if (p.opacity <= 0 || p.y > window.innerHeight) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      requestAnimationFrame(animateConfetti);
+    }
+
+    function initBackgroundElements() {
+      const container = document.getElementById('bgElements');
+      const cloudSvg = '<svg width="120" height="70" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>';
+
+      for (let i = 0; i < 4; i++) {
+        const cloud = document.createElement('div');
+        cloud.className = 'floating-cloud';
+        cloud.style.top = `${12 + i * 20}%`;
+        cloud.style.animationDuration = `${24 + i * 8}s`;
+        cloud.style.animationDelay = `${i * 6}s`;
+        cloud.innerHTML = cloudSvg;
+        container.appendChild(cloud);
+      }
+    }
+
+    /* DATA: 70 QUESTIONS & PASSAGES */
+    const quizData = [{"id": 1, "type": "Ngữ âm (Phonetics)", "question": "Question 1: Choose the word whose underlined part is pronounced differently from the others:", "subtext": "A. n<u>ur</u>se &nbsp;&nbsp;&nbsp; B. pict<u>ur</u>e &nbsp;&nbsp;&nbsp; C. s<u>ur</u>f &nbsp;&nbsp;&nbsp; D. ret<u>ur</u>n", "options": [{"key": "A", "text": "n<u>ur</u>se"}, {"key": "B", "text": "pict<u>ur</u>e"}, {"key": "C", "text": "s<u>ur</u>f"}, {"key": "D", "text": "ret<u>ur</u>n"}], "correct": "B", "trans": "Dịch: Chọn từ có phần gạch chân 'ur' phát âm khác với ba từ còn lại.", "analysis": [{"word": "nurse", "badge": "âm dài /ɜː/", "badgeType": "wrong", "note": "= /nɜːs/ (y tá) - 'ur' phát âm là âm dài /ɜː/"}, {"word": "picture", "badge": "âm ngắn /ə/", "badgeType": "correct", "note": "= /ˈpɪktʃər/ (bức tranh) - đuôi 'ure' phát âm là /ər/ (âm /ə/ ngắn)"}, {"word": "surf", "badge": "âm dài /ɜː/", "badgeType": "wrong", "note": "= /sɜːf/ (lướt sóng) - 'ur' phát âm là âm dài /ɜː/"}, {"word": "return", "badge": "âm dài /ɜː/", "badgeType": "wrong", "note": "= /rɪˈtɜːn/ (trở về) - 'ur' phát âm là âm dài /ɜː/"}], "whyCorrect": {"rule": "Quy tắc nguyên âm /ɜː/ và /ə/:", "content": "Phần 'ure' trong <span class='highlight-green-tag'>picture</span> phát âm là âm ngắn <b>/ə/</b>. Ba từ còn lại 'ur' đều là âm dài <b>/ɜː/</b>."}, "whyWrong": [{"word": "nurse", "reason": "phát âm là /ɜː/."}, {"word": "surf", "reason": "phát âm là /ɜː/."}, {"word": "return", "reason": "phát âm là /ɜː/."}]}, {"id": 2, "type": "Ngữ âm (Phonetics - Đuôi -ed)", "question": "Question 2: Choose the word whose underlined part is pronounced differently from the others:", "subtext": "A. clean<u>ed</u> &nbsp;&nbsp;&nbsp; B. play<u>ed</u> &nbsp;&nbsp;&nbsp; C. gain<u>ed</u> &nbsp;&nbsp;&nbsp; D. cook<u>ed</u>", "options": [{"key": "A", "text": "clean<u>ed</u>"}, {"key": "B", "text": "play<u>ed</u>"}, {"key": "C", "text": "gain<u>ed</u>"}, {"key": "D", "text": "cook<u>ed</u>"}], "correct": "D", "trans": "Dịch: Chọn từ có phần gạch chân đuôi -ed phát âm khác với ba từ còn lại.", "analysis": [{"word": "cleaned", "badge": "đuôi -ed: /d/", "badgeType": "wrong", "note": "= /kliːnd/ - tận cùng bằng âm hữu thanh /n/"}, {"word": "played", "badge": "đuôi -ed: /d/", "badgeType": "wrong", "note": "= /pleɪd/ - tận cùng bằng nguyên âm /eɪ/"}, {"word": "gained", "badge": "đuôi -ed: /d/", "badgeType": "wrong", "note": "= /ɡeɪnd/ - tận cùng bằng âm hữu thanh /n/"}, {"word": "cooked", "badge": "đuôi -ed: /t/", "badgeType": "correct", "note": "= /kʊkt/ - tận cùng bằng phụ âm vô thanh /k/"}], "whyCorrect": {"rule": "Quy tắc phát âm đuôi -ed:", "content": "Từ <span class='highlight-green-tag'>cooked</span> tận cùng bằng phụ âm vô thanh <b>/k/</b> nên phát âm là <b>/t/</b>. Ba từ còn lại kết thúc bằng âm hữu thanh nên phát âm là <b>/d/</b>."}, "whyWrong": [{"word": "cleaned", "reason": "kết thúc bằng âm hữu thanh /n/ → phát âm là /d/."}, {"word": "played", "reason": "kết thúc bằng nguyên âm hữu thanh → phát âm là /d/."}, {"word": "gained", "reason": "kết thúc bằng âm hữu thanh /n/ → phát âm là /d/."}]}, {"id": 3, "type": "Ngữ âm (Phonetics - Âm /f/ và /v/)", "question": "Question 3: Choose the word whose underlined part is pronounced differently from the others:", "subtext": "A. <u>f</u>lu &nbsp;&nbsp;&nbsp; B. <u>f</u>ast &nbsp;&nbsp;&nbsp; C. o<u>f</u> &nbsp;&nbsp;&nbsp; D. <u>f</u>eel", "options": [{"key": "A", "text": "<u>f</u>lu"}, {"key": "B", "text": "<u>f</u>ast"}, {"key": "C", "text": "o<u>f</u>"}, {"key": "D", "text": "<u>f</u>eel"}], "correct": "C", "trans": "Dịch: Chọn từ có chữ 'f' phát âm khác với ba từ còn lại.", "analysis": [{"word": "flu", "badge": "phát âm /f/", "badgeType": "wrong", "note": "= /fluː/ (bệnh cúm) - phát âm là phụ âm vô thanh /f/"}, {"word": "fast", "badge": "phát âm /f/", "badgeType": "wrong", "note": "= /fɑːst/ (nhanh) - phát âm là phụ âm vô thanh /f/"}, {"word": "of", "badge": "phát âm /v/", "badgeType": "correct", "note": "= /əv/ (của) - ngoại lệ chữ 'f' phát âm là phụ âm hữu thanh /v/"}, {"word": "feel", "badge": "phát âm /f/", "badgeType": "wrong", "note": "= /fiːl/ (cảm thấy) - phát âm là phụ âm vô thanh /f/"}], "whyCorrect": {"rule": "Bẫy phát âm chữ 'f' trong giới từ 'of':", "content": "Trong giới từ <span class='highlight-green-tag'>of</span>, chữ 'f' phát âm là âm hữu thanh <b>/v/</b> (/əv/). Ở các từ 'flu', 'fast', 'feel', chữ 'f' đều phát âm là <b>/f/</b>."}, "whyWrong": [{"word": "flu", "reason": "phát âm là /f/."}, {"word": "fast", "reason": "phát âm là /f/."}, {"word": "feel", "reason": "phát âm là /f/."}]}, {"id": 4, "type": "Trọng âm (Stress)", "question": "Question 4: Choose the word which has a different stress pattern from the other three in each question:", "subtext": "A. benefit &nbsp;&nbsp;&nbsp; B. encourage &nbsp;&nbsp;&nbsp; C. donation &nbsp;&nbsp;&nbsp; D. recycle", "options": [{"key": "A", "text": "benefit"}, {"key": "B", "text": "encourage"}, {"key": "C", "text": "donation"}, {"key": "D", "text": "recycle"}], "correct": "A", "trans": "Dịch: Chọn từ có trọng âm chính khác với ba từ còn lại.", "analysis": [{"word": "benefit", "badge": "trọng âm 1", "badgeType": "correct", "note": "= /ˈbenɪfɪt/ (n/v: lợi ích) - trọng âm rơi vào âm tiết 1"}, {"word": "encourage", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /ɪnˈkʌrɪdʒ/ (v: khuyến khích) - trọng âm rơi vào âm tiết 2"}, {"word": "donation", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /dəʊˈneɪʃn/ (n: sự quyên góp) - trọng âm trước đuôi -tion"}, {"word": "recycle", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /ˌriːˈsaɪkl/ (v: tái chế) - trọng âm rơi vào âm tiết 2"}], "whyCorrect": {"rule": "Vị trí trọng âm từ 3 âm tiết:", "content": "<span class='highlight-green-tag'>benefit</span> có trọng âm rơi vào âm tiết thứ <b>1</b>, ba từ còn lại trọng âm đều rơi vào âm tiết thứ <b>2</b>."}, "whyWrong": [{"word": "encourage", "reason": "trọng âm rơi vào âm tiết 2."}, {"word": "donation", "reason": "trọng âm rơi vào âm tiết 2."}, {"word": "recycle", "reason": "trọng âm rơi vào âm tiết 2."}]}, {"id": 5, "type": "Trọng âm (Stress)", "question": "Question 5: Choose the word which has a different stress pattern from the other three in each question:", "subtext": "A. community &nbsp;&nbsp;&nbsp; B. important &nbsp;&nbsp;&nbsp; C. volunteer &nbsp;&nbsp;&nbsp; D. performance", "options": [{"key": "A", "text": "community"}, {"key": "B", "text": "important"}, {"key": "C", "text": "volunteer"}, {"key": "D", "text": "performance"}], "correct": "C", "trans": "Dịch: Chọn từ có trọng âm chính khác với ba từ còn lại.", "analysis": [{"word": "community", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /kəˈmjuːnəti/ (n: cộng đồng) - đuôi -ity nhận trọng âm trước nó (âm 2)"}, {"word": "important", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /ɪmˈpɔːtnt/ (adj: quan trọng) - trọng âm rơi vào âm tiết 2"}, {"word": "volunteer", "badge": "trọng âm 3", "badgeType": "correct", "note": "= /ˌvɒlənˈtɪər/ (n/v: tình nguyện viên) - đuôi -eer nhận trọng âm (âm 3)"}, {"word": "performance", "badge": "trọng âm 2", "badgeType": "wrong", "note": "= /pəˈfɔːməns/ (n: buổi biểu diễn) - trọng âm rơi vào âm tiết 2"}], "whyCorrect": {"rule": "Quy tắc hậu tố nhận trọng âm -eer:", "content": "<span class='highlight-green-tag'>volunteer</span> có tận cùng là '-eer' nên trọng âm rơi vào chính nó (âm tiết thứ <b>3</b>). Các từ còn lại có trọng âm rơi vào âm tiết thứ <b>2</b>."}, "whyWrong": [{"word": "community", "reason": "trọng âm rơi vào âm tiết 2."}, {"word": "important", "reason": "trọng âm rơi vào âm tiết 2."}, {"word": "performance", "reason": "trọng âm rơi vào âm tiết 2."}]}, {"id": 6, "type": "Trọng âm (Stress)", "question": "Question 6: Choose the word which has a different stress pattern from the other three in each question:", "subtext": "A. healthy &nbsp;&nbsp;&nbsp; B. disease &nbsp;&nbsp;&nbsp; C. sickness &nbsp;&nbsp;&nbsp; D. expert", "options": [{"key": "A", "text": "healthy"}, {"key": "B", "text": "disease"}, {"key": "C", "text": "sickness"}, {"key": "D", "text": "expert"}], "correct": "B", "trans": "Dịch: Chọn từ có trọng âm chính khác với ba từ còn lại.", "analysis": [{"word": "healthy", "badge": "trọng âm 1", "badgeType": "wrong", "note": "= /ˈhelθi/ (adj: khỏe mạnh) - tính từ 2 âm tiết trọng âm rơi vào âm 1"}, {"word": "disease", "badge": "trọng âm 2", "badgeType": "correct", "note": "= /dɪˈziːz/ (n: bệnh tật) - danh từ đặc biệt trọng âm rơi vào âm 2"}, {"word": "sickness", "badge": "trọng âm 1", "badgeType": "wrong", "note": "= /ˈsɪknəs/ (n: sự ốm đau) - danh từ 2 âm tiết trọng âm rơi vào âm 1"}, {"word": "expert", "badge": "trọng âm 1", "badgeType": "wrong", "note": "= /ˈekspɜːt/ (n: chuyên gia) - danh từ 2 âm tiết trọng âm rơi vào âm 1"}], "whyCorrect": {"rule": "Trọng âm từ 2 âm tiết đặc biệt:", "content": "<span class='highlight-green-tag'>disease</span> là danh từ đặc biệt có trọng âm rơi vào âm tiết thứ <b>2</b>. Ba từ còn lại 'healthy', 'sickness', 'expert' đều có trọng âm rơi vào âm tiết thứ <b>1</b>."}, "whyWrong": [{"word": "healthy", "reason": "trọng âm rơi vào âm tiết 1."}, {"word": "sickness", "reason": "trọng âm rơi vào âm tiết 1."}, {"word": "expert", "reason": "trọng âm rơi vào âm tiết 1."}]}, {"id": 7, "type": "Thì Hiện Tại Đơn (Present Simple)", "question": "Question 7: ______ you ______ to school every morning?", "options": [{"key": "A", "text": "Does/ walk"}, {"key": "B", "text": "Do/ walk"}, {"key": "C", "text": "Will/ walk"}, {"key": "D", "text": "Are/ walking"}], "correct": "B", "trans": "Dịch: Bạn có đi bộ đến trường vào mỗi buổi sáng không?", "analysis": [{"word": "Does/ walk", "badge": "sai chủ ngữ", "badgeType": "wrong", "note": "= 'Does' chỉ dùng cho chủ ngữ ngôi thứ 3 số ít He/She/It"}, {"word": "Do/ walk", "badge": "công thức chuẩn", "badgeType": "correct", "note": "= Do + you + V-bare (Hiện tại đơn với 'every morning')"}, {"word": "Will/ walk", "badge": "thì tương lai", "badgeType": "wrong", "note": "= dùng cho tương lai, không diễn tả thói quen 'every morning'"}, {"word": "Are/ walking", "badge": "tiếp diễn", "badgeType": "wrong", "note": "= không dùng tiếp diễn cho thói quen hàng ngày"}], "whyCorrect": {"rule": "Cấu trúc nghi vấn thì Hiện tại đơn:", "content": "Câu có dấu hiệu tần suất <b>every morning</b> (mỗi buổi sáng). Với chủ ngữ <b>you</b>, công thức câu hỏi là: <span class='highlight-green-tag'>Do + you + V (nguyên thể)?</span> → <b>Do / walk</b>."}, "whyWrong": [{"word": "Does/ walk", "reason": "'Does' chỉ đi với chủ ngữ số ít."}, {"word": "Will/ walk", "reason": "sai thì vì câu diễn tả thói quen lặp đi lặp lại."}, {"word": "Are/ walking", "reason": "không dùng thì hiện tại tiếp diễn cho thói quen."}]}, {"id": 8, "type": "Liên từ (Conjunctions)", "question": "Question 8: The Japanese eat a lot of fish instead of meat ______ they stay healthier.", "options": [{"key": "A", "text": "but"}, {"key": "B", "text": "because"}, {"key": "C", "text": "although"}, {"key": "D", "text": "so"}], "correct": "D", "trans": "Dịch: Người Nhật ăn rất nhiều cá thay vì thịt vì vậy họ duy trì sức khỏe tốt hơn.", "analysis": [{"word": "but", "badge": "nhưng", "badgeType": "wrong", "note": "= chỉ sự tương phản đối lập"}, {"word": "because", "badge": "bởi vì", "badgeType": "wrong", "note": "= chỉ nguyên nhân (vế sau là kết quả nên không dùng because)"}, {"word": "although", "badge": "mặc dù", "badgeType": "wrong", "note": "= chỉ sự nhượng bộ"}, {"word": "so", "badge": "vì vậy, cho nên", "badgeType": "correct", "note": "= liên từ chỉ kết quả của hành động ăn cá"}], "whyCorrect": {"rule": "Liên từ chỉ kết quả:", "content": "Vế trước 'eat a lot of fish...' là hành động dẫn đến kết quả ở vế sau 'stay healthier'. Ta dùng liên từ <span class='highlight-green-tag'>so</span> (vì vậy/cho nên)."}, "whyWrong": [{"word": "but", "reason": "hai vế không mang tính tương phản."}, {"word": "because", "reason": "vế sau là kết quả chứ không phải nguyên nhân."}, {"word": "although", "reason": "sai nghĩa tương phản."}]}, {"id": 9, "type": "Từ vựng (Vocabulary - Sức khỏe)", "question": "Question 9: ______, hats and gloves can protect sensitive skin from sunburn.", "options": [{"key": "A", "text": "Chapped lips"}, {"key": "B", "text": "Red spots"}, {"key": "C", "text": "Suncream"}, {"key": "D", "text": "Dry hair"}], "correct": "C", "trans": "Dịch: Kem chống nắng, mũ và găng tay có thể bảo vệ làn da nhạy cảm khỏi bị cháy nắng.", "analysis": [{"word": "Chapped lips", "badge": "môi nứt nẻ", "badgeType": "wrong", "note": "= triệu chứng bệnh về da, không phải đồ bảo vệ"}, {"word": "Red spots", "badge": "nốt đỏ", "badgeType": "wrong", "note": "= đốm đỏ, phát ban"}, {"word": "Suncream", "badge": "kem chống nắng", "badgeType": "correct", "note": "= sản phẩm bảo vệ da khỏi tia cực tím/cháy nắng"}, {"word": "Dry hair", "badge": "tóc khô", "badgeType": "wrong", "note": "= không liên quan đến bảo vệ da"}], "whyCorrect": {"rule": "Ngữ cảnh bảo vệ làn da:", "content": "Đi cùng với <b>hats</b> (mũ) và <b>gloves</b> (găng tay) để chống <b>sunburn</b> (cháy nắng) thì chỉ có <span class='highlight-green-tag'>Suncream</span> (kem chống nắng) là hoàn toàn chính xác."}, "whyWrong": [{"word": "Chapped lips", "reason": "là bệnh lý (môi nứt nẻ)."}, {"word": "Red spots", "reason": "là nốt mẩn đỏ."}, {"word": "Dry hair", "reason": "là mái tóc khô."}]}, {"id": 10, "type": "Kết hợp từ (Collocations)", "question": "Question 10: My friends and I sometimes ______ blood to help patients in hospitals.", "options": [{"key": "A", "text": "bring"}, {"key": "B", "text": "donate"}, {"key": "C", "text": "take"}, {"key": "D", "text": "make"}], "correct": "B", "trans": "Dịch: Bạn bè tôi và tôi thỉnh thoảng hiến máu để giúp đỡ các bệnh nhân trong bệnh viện.", "analysis": [{"word": "bring", "badge": "mang đến", "badgeType": "wrong", "note": "= không kết hợp tự nhiên với blood"}, {"word": "donate", "badge": "hiến tặng", "badgeType": "correct", "note": "= donate blood: hiến máu nhân đạo"}, {"word": "take", "badge": "lấy, cầm", "badgeType": "wrong", "note": "= không mang nghĩa hiến tặng"}, {"word": "make", "badge": "chế tạo, làm", "badgeType": "wrong", "note": "= không dùng make blood"}], "whyCorrect": {"rule": "Collocation chuẩn chủ đề cộng đồng:", "content": "Cụm từ cố định chỉ việc hiến máu cứu người là: <span class='highlight-green-tag'>donate blood</span>."}, "whyWrong": [{"word": "bring", "reason": "bring blood không dùng để chỉ việc hiến máu."}, {"word": "take", "reason": "take blood là lấy máu đi xét nghiệm."}, {"word": "make", "reason": "sai collocation."}]}, {"id": 11, "type": "Cụm từ cố định (Collocations)", "question": "Question 11: Last year, our school organized a concert to ______ money for the poor.", "options": [{"key": "A", "text": "earn"}, {"key": "B", "text": "get"}, {"key": "C", "text": "rise"}, {"key": "D", "text": "raise"}], "correct": "D", "trans": "Dịch: Năm ngoái, trường chúng tôi đã tổ chức một buổi hòa nhạc để gây quỹ cho người nghèo.", "analysis": [{"word": "earn", "badge": "kiếm tiền", "badgeType": "wrong", "note": "= earn money: kiếm tiền bằng sức lao động bản thân"}, {"word": "get", "badge": "lấy được", "badgeType": "wrong", "note": "= không mang nghĩa gây quỹ từ thiện"}, {"word": "rise", "badge": "nội động từ", "badgeType": "wrong", "note": "= gia tăng/mọc lên (không có tân ngữ theo sau)"}, {"word": "raise", "badge": "quyên góp, gây quỹ", "badgeType": "correct", "note": "= raise money/funds: quyên góp tiền từ thiện"}], "whyCorrect": {"rule": "Collocation từ thiện:", "content": "Cụm từ chuẩn quốc tế chỉ việc quyên góp tiền vì mục đích từ thiện là: <span class='highlight-green-tag'>raise money for...</span>."}, "whyWrong": [{"word": "earn", "reason": "earn money là làm việc để kiếm tiền lương cá nhân."}, {"word": "get", "reason": "sai nghĩa gây quỹ."}, {"word": "rise", "reason": "rise là nội động từ, không có tân ngữ 'money'."}]}, {"id": 12, "type": "Từ loại (Word Form)", "question": "Question 12: Eating too much sugar is ______ to our health.", "options": [{"key": "A", "text": "harmful"}, {"key": "B", "text": "harmless"}, {"key": "C", "text": "harm"}, {"key": "D", "text": "unharmed"}], "correct": "A", "trans": "Dịch: Ăn quá nhiều đường có hại cho sức khỏe của chúng ta.", "analysis": [{"word": "harmful", "badge": "có hại", "badgeType": "correct", "note": "= harmful to sth: gây hại cho cái gì"}, {"word": "harmless", "badge": "vô hại", "badgeType": "wrong", "note": "= không gây hại (trái ngược với sự thật)"}, {"word": "harm", "badge": "danh từ/động từ", "badgeType": "wrong", "note": "= sau to be 'is' cần một tính từ"}, {"word": "unharmed", "badge": "không bị tổn thương", "badgeType": "wrong", "note": "= an toàn, bình an vô sự"}], "whyCorrect": {"rule": "Cấu trúc be + harmful to:", "content": "Sau động từ to be 'is' cần tính từ mang nghĩa tiêu cực. Cấu trúc: <span class='highlight-green-tag'>be harmful to sth</span> = có hại cho cái gì."}, "whyWrong": [{"word": "harmless", "reason": "nghĩa là vô hại, trái với thực tế."}, {"word": "harm", "reason": "là danh từ hoặc động từ, không đứng sau 'is' để làm tính từ."}, {"word": "unharmed", "reason": "nghĩa là không bị tổn thương sau tai nạn."}]}, {"id": 13, "type": "Giới từ cố định (Prepositions)", "question": "Question 13: Staying ______ shape is the most important health tip.", "options": [{"key": "A", "text": "in"}, {"key": "B", "text": "at"}, {"key": "C", "text": "on"}, {"key": "D", "text": "with"}], "correct": "A", "trans": "Dịch: Giữ dáng (giữ cơ thể cân đối) là lời khuyên sức khỏe quan trọng nhất.", "analysis": [{"word": "in", "badge": "stay in shape", "badgeType": "correct", "note": "= giữ thân hình thon gọn, khỏe mạnh"}, {"word": "at", "badge": "sai giới từ", "badgeType": "wrong", "note": "= không có cụm stay at shape"}, {"word": "on", "badge": "sai giới từ", "badgeType": "wrong", "note": "= không có cụm stay on shape"}, {"word": "with", "badge": "sai giới từ", "badgeType": "wrong", "note": "= không dùng stay with shape"}], "whyCorrect": {"rule": "Thành ngữ thể thao & sức khỏe:", "content": "Thành ngữ chuẩn: <span class='highlight-green-tag'>stay in shape</span> hoặc <b>keep in shape</b> = giữ gìn vóc dáng thon gọn, khỏe mạnh."}, "whyWrong": [{"word": "at", "reason": "sai giới từ cố định."}, {"word": "on", "reason": "sai giới từ cố định."}, {"word": "with", "reason": "sai giới từ cố định."}]}, {"id": 14, "type": "Cụm từ cố định (Collocations)", "question": "Question 14: My sister eats a lot of junk food so she is putting on ______ now.", "options": [{"key": "A", "text": "weigh"}, {"key": "B", "text": "weight"}, {"key": "C", "text": "weights"}, {"key": "D", "text": "weighing"}], "correct": "B", "trans": "Dịch: Chị gái tôi ăn rất nhiều đồ ăn vặt nhiều dầu mỡ nên dạo này chị ấy đang bị tăng cân.", "analysis": [{"word": "weigh", "badge": "động từ", "badgeType": "wrong", "note": "= (v) cân nặng, nặng bao nhiêu kg"}, {"word": "weight", "badge": "danh từ", "badgeType": "correct", "note": "= (n) cân nặng (put on weight: tăng cân)"}, {"word": "weights", "badge": "quả tạ", "badgeType": "wrong", "note": "= danh từ đếm được chỉ quả tạ tập gym"}, {"word": "weighing", "badge": "V-ing", "badgeType": "wrong", "note": "= việc cân đo"}], "whyCorrect": {"rule": "Cụm từ tăng cân:", "content": "Cụm từ cố định: <span class='highlight-green-tag'>put on weight</span> = tăng cân (trái nghĩa với <b>lose weight</b> = giảm cân). Cần danh từ không đếm được 'weight'."}, "whyWrong": [{"word": "weigh", "reason": "là động từ."}, {"word": "weights", "reason": "nghĩa là những quả tạ tập thể hình."}, {"word": "weighing", "reason": "sai cấu trúc ngữ pháp."}]}, {"id": 15, "type": "Từ loại (Word Choice)", "question": "Question 15: Let's do something ______ instead of watching TV!", "options": [{"key": "A", "text": "outdoors"}, {"key": "B", "text": "outdoor"}, {"key": "C", "text": "indoors"}, {"key": "D", "text": "indoor"}], "correct": "A", "trans": "Dịch: Chúng mình hãy cùng làm điều gì đó ở ngoài trời thay vì cứ xem tivi mãi!", "analysis": [{"word": "outdoors", "badge": "trạng từ ngoài trời", "badgeType": "correct", "note": "= (adv) ở ngoài trời (đứng sau đại từ bất định something)"}, {"word": "outdoor", "badge": "tính từ", "badgeType": "wrong", "note": "= (adj) đứng trước danh từ (outdoor activities)"}, {"word": "indoors", "badge": "trạng từ trong nhà", "badgeType": "wrong", "note": "= trong nhà (xem tivi đã ở trong nhà rồi)"}, {"word": "indoor", "badge": "tính từ trong nhà", "badgeType": "wrong", "note": "= (adj) chỉ đứng trước danh từ"}], "whyCorrect": {"rule": "Vị trí bổ nghĩa cho đại từ bất định:", "content": "Sau đại từ bất định 'something' ta cần một trạng từ chỉ nơi chốn đối lập với việc xem tivi trong nhà: <span class='highlight-green-tag'>outdoors</span> (ở ngoài trời)."}, "whyWrong": [{"word": "outdoor", "reason": "là tính từ, phải đứng trước danh từ (ví dụ: outdoor games)."}, {"word": "indoors", "reason": "sai nghĩa (xem tivi đã ở trong nhà rồi)."}, {"word": "indoor", "reason": "là tính từ đứng trước danh từ."}]}, {"id": 16, "type": "Thì Quá Khứ Đơn (Past Simple)", "question": "Question 16: My friends and I ______ the streets in our neighbourhood every summer when we were small.", "options": [{"key": "A", "text": "cleaned"}, {"key": "B", "text": "has cleaned"}, {"key": "C", "text": "were cleaning"}, {"key": "D", "text": "cleans"}], "correct": "A", "trans": "Dịch: Tôi và bạn bè đã dọn dẹp các con phố trong khu xóm vào mỗi mùa hè khi chúng tôi còn nhỏ.", "analysis": [{"word": "cleaned", "badge": "Quá khứ đơn", "badgeType": "correct", "note": "= diễn tả thói quen đã kết thúc trong quá khứ"}, {"word": "has cleaned", "badge": "Hiện tại hoàn thành", "badgeType": "wrong", "note": "= chủ ngữ số nhiều không đi với 'has' và sai mốc quá khứ"}, {"word": "were cleaning", "badge": "Quá khứ tiếp diễn", "badgeType": "wrong", "note": "= không dùng cho thói quen hàng năm"}, {"word": "cleans", "badge": "Hiện tại đơn số ít", "badgeType": "wrong", "note": "= sai cả thì và sai chủ ngữ số nhiều"}], "whyCorrect": {"rule": "Thói quen trong quá khứ:", "content": "Mệnh đề trạng ngữ chỉ thời gian <b>when we were small</b> (khi chúng tôi còn nhỏ) chỉ rõ thời điểm trong quá khứ và đã chấm dứt, do đó dùng thì <span class='highlight-green-tag'>Quá khứ đơn (cleaned)</span>."}, "whyWrong": [{"word": "has cleaned", "reason": "sai thì và sai hòa hợp chủ vị."}, {"word": "were cleaning", "reason": "chỉ hành động đang diễn ra tại một thời điểm cụ thể."}, {"word": "cleans", "reason": "chủ ngữ số nhiều không thêm -s và sai thì."}]}, {"id": 17, "type": "Cụm động từ (Phrasal Verbs)", "question": "Question 17: Why don't you take ______ a new hobby?", "options": [{"key": "A", "text": "up"}, {"key": "B", "text": "in"}, {"key": "C", "text": "over"}, {"key": "D", "text": "after"}], "correct": "A", "trans": "Dịch: Tại sao bạn không bắt đầu theo đuổi một sở thích mới nhỉ?", "analysis": [{"word": "up", "badge": "take up (bắt đầu)", "badgeType": "correct", "note": "= take up a hobby: bắt đầu một sở thích/thói quen mới"}, {"word": "in", "badge": "take in (lừa gạt/tiếp thu)", "badgeType": "wrong", "note": "= hiểu, hấp thụ, lừa dối"}, {"word": "over", "badge": "take over (tiếp quản)", "badgeType": "wrong", "note": "= tiếp quản công ty, vị trí"}, {"word": "after", "badge": "take after (giống ai)", "badgeType": "wrong", "note": "= giống bố mẹ, người thân"}], "whyCorrect": {"rule": "Phrasal verb với hobby:", "content": "Cụm động từ quen thuộc trong bài học Unit 1: <span class='highlight-green-tag'>take up a hobby</span> = bắt đầu một sở thích mới."}, "whyWrong": [{"word": "in", "reason": "take in không đi với a hobby."}, {"word": "over", "reason": "take over nghĩa là tiếp quản quyền lực."}, {"word": "after", "reason": "take after nghĩa là giống ai đó về ngoại hình/tính cách."}]}, {"id": 18, "type": "Thì Quá Khứ Đơn (Past Simple)", "question": "Question 18: My uncle ______ karate when he was young.", "options": [{"key": "A", "text": "do"}, {"key": "B", "text": "does"}, {"key": "C", "text": "did"}, {"key": "D", "text": "done"}], "correct": "C", "trans": "Dịch: Chú tôi đã tập võ karate khi chú ấy còn trẻ.", "analysis": [{"word": "do", "badge": "V nguyên mẫu", "badgeType": "wrong", "note": "= thì hiện tại đơn, không phù hợp với 'was young'"}, {"word": "does", "badge": "V-s/es hiện tại", "badgeType": "wrong", "note": "= thì hiện tại đơn"}, {"word": "did", "badge": "Quá khứ đơn", "badgeType": "correct", "note": "= did karate (do karate đổi sang quá khứ là did)"}, {"word": "done", "badge": "V3 phân từ", "badgeType": "wrong", "note": "= không thể đứng một mình làm động từ chính"}], "whyCorrect": {"rule": "Môn võ thuật đi với 'do' và chia thì Quá khứ:", "content": "Môn võ karate đi với động từ <b>do</b> (do karate). Câu có mốc thời gian quá khứ rõ ràng <b>when he was young</b> nên động từ chuyển thành dạng V2: <span class='highlight-green-tag'>did</span>."}, "whyWrong": [{"word": "do", "reason": "sai thì hiện tại."}, {"word": "does", "reason": "sai thì hiện tại."}, {"word": "done", "reason": "là quá khứ phân từ, không làm động từ vị ngữ đơn."}]}, {"id": 19, "type": "Cấu trúc song hành (Parallel Structure)", "question": "Question 19: My friends and I usually donate books and ______ homeless children.", "options": [{"key": "A", "text": "tutors"}, {"key": "B", "text": "tutoring"}, {"key": "C", "text": "tutor"}, {"key": "D", "text": "tutored"}], "correct": "C", "trans": "Dịch: Tôi và bạn bè thường quyên góp sách và dạy kèm cho trẻ em vô gia cư.", "analysis": [{"word": "tutors", "badge": "thêm -s", "badgeType": "wrong", "note": "= chủ ngữ 'My friends and I' là số nhiều không thêm -s"}, {"word": "tutoring", "badge": "V-ing", "badgeType": "wrong", "note": "= không song hành với động từ nguyên thể 'donate'"}, {"word": "tutor", "badge": "V nguyên thể", "badgeType": "correct", "note": "= song hành với 'donate' (donate ... and tutor ...)"}, {"word": "tutored", "badge": "V quá khứ", "badgeType": "wrong", "note": "= câu có 'usually' thì hiện tại đơn"}], "whyCorrect": {"rule": "Cấu trúc song hành với liên từ 'and':", "content": "Hai hành động nối với nhau bởi liên từ <b>and</b> phải cùng một dạng: <span class='highlight-green-tag'>usually donate (V-bare) ... and tutor (V-bare)</span>. Chủ ngữ 'My friends and I' là số nhiều."}, "whyWrong": [{"word": "tutors", "reason": "chủ ngữ số nhiều không thêm -s."}, {"word": "tutoring", "reason": "lệch cấu trúc song hành với 'donate'."}, {"word": "tutored", "reason": "sai thì quá khứ (câu có 'usually')."}]}, {"id": 20, "type": "Thì Quá Khứ Đơn (Past Simple)", "question": "Question 20: Our class ______ away warm clothes to street children two days ago.", "options": [{"key": "A", "text": "give"}, {"key": "B", "text": "gave"}, {"key": "C", "text": "have given"}, {"key": "D", "text": "will give"}], "correct": "B", "trans": "Dịch: Lớp chúng tôi đã tặng quần áo ấm cho trẻ em cơ nhỡ hai ngày trước.", "analysis": [{"word": "give", "badge": "hiện tại đơn", "badgeType": "wrong", "note": "= không phù hợp với mốc 'two days ago'"}, {"word": "gave", "badge": "quá khứ đơn", "badgeType": "correct", "note": "= gave away: đã đem tặng cho (dạng quá khứ của give)"}, {"word": "have given", "badge": "hiện tại hoàn thành", "badgeType": "wrong", "note": "= không đi với thời điểm xác định 'ago'"}, {"word": "will give", "badge": "tương lai đơn", "badgeType": "wrong", "note": "= hành động sẽ xảy ra trong tương lai"}], "whyCorrect": {"rule": "Dấu hiệu nhận biết 'ago':", "content": "Cụm trạng từ thời gian <b>two days ago</b> (hai ngày trước) là dấu hiệu kinh điển của thì <span class='highlight-green-tag'>Quá khứ đơn</span>. Động từ bất quy tắc của 'give' ở quá khứ là <b>gave</b>."}, "whyWrong": [{"word": "give", "reason": "sai thì hiện tại."}, {"word": "have given", "reason": "hiện tại hoàn thành không đi với thời gian quá khứ rõ ràng như 'ago'."}, {"word": "will give", "reason": "sai thì tương lai."}]}, {"id": 21, "type": "Cấu trúc động từ (Verb Patterns)", "question": "Question 21: Doing volunteer work can ______ you feel more confident.", "options": [{"key": "A", "text": "help"}, {"key": "B", "text": "force"}, {"key": "C", "text": "bring"}, {"key": "D", "text": "encourage"}], "correct": "A", "trans": "Dịch: Làm công việc tình nguyện có thể giúp bạn cảm thấy tự tin hơn.", "analysis": [{"word": "help", "badge": "help sb (to) do sth", "badgeType": "correct", "note": "= giúp ai làm gì (help you feel)"}, {"word": "force", "badge": "force sb to do sth", "badgeType": "wrong", "note": "= ép buộc ai (phải có 'to feel')"}, {"word": "bring", "badge": "mang lại", "badgeType": "wrong", "note": "= không có cấu trúc bring sb do sth"}, {"word": "encourage", "badge": "encourage sb to do", "badgeType": "wrong", "note": "= khuyến khích ai (bắt buộc có 'to feel')"}], "whyCorrect": {"rule": "Cấu trúc của động từ 'help':", "content": "Sau tân ngữ 'you' là động từ nguyên thể không to <b>feel</b>. Trong 4 đáp án, chỉ có <span class='highlight-green-tag'>help + O + V-bare / to-V</span> là phù hợp ngữ pháp và ngữ nghĩa."}, "whyWrong": [{"word": "force", "reason": "force sb to do sth (cần có 'to')."}, {"word": "bring", "reason": "không có cấu trúc bring you feel."}, {"word": "encourage", "reason": "encourage sb to do sth (cần có 'to')."}]}, {"id": 22, "type": "Cấu trúc spend time + V-ing", "question": "Question 22: We need to spend less time ______ computer games.", "options": [{"key": "A", "text": "play"}, {"key": "B", "text": "to play"}, {"key": "C", "text": "playing"}, {"key": "D", "text": "to playing"}], "correct": "C", "trans": "Dịch: Chúng ta cần dành ít thời gian hơn cho việc chơi trò chơi điện tử.", "analysis": [{"word": "play", "badge": "V nguyên mẫu", "badgeType": "wrong", "note": "= không đi sau spend time"}, {"word": "to play", "badge": "to-V", "badgeType": "wrong", "note": "= bẫy thường gặp (spend không đi với to-V)"}, {"word": "playing", "badge": "V-ing chuẩn", "badgeType": "correct", "note": "= spend + time + V-ing: dành thời gian làm gì"}, {"word": "to playing", "badge": "sai dạng", "badgeType": "wrong", "note": "= không tồn tại cấu trúc này"}], "whyCorrect": {"rule": "Cấu trúc vàng với 'spend':", "content": "Công thức bắt buộc phải nhớ: <span class='highlight-green-tag'>spend + time/money + V-ing</span> (dành thời gian làm gì) → <b>playing</b>."}, "whyWrong": [{"word": "play", "reason": "spend không đi với V nguyên thể."}, {"word": "to play", "reason": "rất nhiều học sinh nhầm lẫn, hãy nhớ spend LUÔN đi với V-ing."}, {"word": "to playing", "reason": "sai cấu trúc."}]}, {"id": 23, "type": "Giao tiếp hàng ngày (Communication)", "question": "Question 23: Mi: 'Nga, what is your favourite hobby?' - Nga: '______'", "options": [{"key": "A", "text": "I love cooking"}, {"key": "B", "text": "I often cook dinner"}, {"key": "C", "text": "My favourite subject is Math"}, {"key": "D", "text": "Yes, I like it"}], "correct": "A", "trans": "Dịch: Mi: 'Nga ơi, sở thích yêu thích của bạn là gì?' - Nga: 'Tớ thích nấu ăn.'", "analysis": [{"word": "I love cooking", "badge": "nêu sở thích", "badgeType": "correct", "note": "= Tớ yêu thích việc nấu ăn (trả lời đúng trọng tâm)"}, {"word": "I often cook dinner", "badge": "thói quen làm việc", "badgeType": "wrong", "note": "= Tớ thường nấu bữa tối (nêu thói quen, chưa chỉ rõ sở thích)"}, {"word": "My favourite subject...", "badge": "môn học yêu thích", "badgeType": "wrong", "note": "= Môn học yêu thích là Toán (lạc đề câu hỏi hobby)"}, {"word": "Yes, I like it", "badge": "trả lời câu Yes/No", "badgeType": "wrong", "note": "= câu hỏi Wh- question không trả lời Yes/No"}], "whyCorrect": {"rule": "Đáp lại câu hỏi về sở thích:", "content": "Câu hỏi bắt đầu bằng <b>what is your favourite hobby?</b> cần câu trả lời chỉ trực tiếp sở thích của bản thân: <span class='highlight-green-tag'>I love cooking</span>."}, "whyWrong": [{"word": "I often cook dinner", "reason": "chỉ nêu một hành động thường làm."}, {"word": "My favourite subject is Math", "reason": "lạc đề sang môn học."}, {"word": "Yes, I like it", "reason": "không trả lời Yes/No cho câu hỏi Wh-."}]}, {"id": 24, "type": "Giao tiếp tại phòng khám (Communication)", "question": "Question 24: - Doctor: 'Good morning. What can I do for you?' - Patient: 'Good morning. ______'", "options": [{"key": "A", "text": "I am fine. Thank you."}, {"key": "B", "text": "I have got a bad cough."}, {"key": "C", "text": "I feel very bored."}, {"key": "D", "text": "I want to know it, too."}], "correct": "B", "trans": "Dịch: Bác sĩ: 'Chào buổi sáng. Tôi có thể giúp gì cho bác?' - Bệnh nhân: 'Chào bác sĩ. Tôi bị ho nặng quá.'", "analysis": [{"word": "I am fine. Thank you.", "badge": "tôi khỏe", "badgeType": "wrong", "note": "= bệnh nhân đi khám bệnh không thể bảo tôi khỏe"}, {"word": "I have got a bad cough.", "badge": "nêu triệu chứng bệnh", "badgeType": "correct", "note": "= Tôi bị ho nặng (trả lời đúng lý do đến khám)"}, {"word": "I feel very bored.", "badge": "tôi chán nản", "badgeType": "wrong", "note": "= không phải triệu chứng bệnh thông thường đi khám"}, {"word": "I want to know it, too.", "badge": "tôi cũng muốn biết", "badgeType": "wrong", "note": "= câu trả lời vô nghĩa trong ngữ cảnh y tế"}], "whyCorrect": {"rule": "Giao tiếp bác sĩ - bệnh nhân:", "content": "Khi bác sĩ hỏi <b>What can I do for you?</b> (Tôi có thể khám/giúp gì cho bạn?), bệnh nhân cần trình bày triệu chứng sức khỏe của mình: <span class='highlight-green-tag'>I have got a bad cough</span> (Tôi bị một cơn ho nặng)."}, "whyWrong": [{"word": "I am fine. Thank you.", "reason": "nếu khỏe thì đã không đi gặp bác sĩ."}, {"word": "I feel very bored.", "reason": "không phải lý do khám bệnh."}, {"word": "I want to know it, too.", "reason": "sai ngữ cảnh hoàn toàn."}]}, {"id": 25, "type": "Giao tiếp hỏi thăm sức khỏe (Communication)", "question": "Question 25: Linda: 'I heard that you had a bad headache yesterday, do you feel better now?' - Linh: '______, I feel pretty good.'", "options": [{"key": "A", "text": "Not bad"}, {"key": "B", "text": "Stay away from me"}, {"key": "C", "text": "Of course"}, {"key": "D", "text": "Thanks for asking"}], "correct": "D", "trans": "Dịch: Linda: 'Tớ nghe nói hôm qua cậu bị đau đầu dữ dội, bây giờ cậu đã thấy đỡ hơn chưa?' - Linh: 'Cảm ơn cậu đã hỏi thăm, tớ cảm thấy khá ổn rồi.'", "analysis": [{"word": "Not bad", "badge": "không tệ", "badgeType": "wrong", "note": "= vế sau đã có 'I feel pretty good' nên lặp nghĩa"}, {"word": "Stay away from me", "badge": "hãy tránh xa tôi ra", "badgeType": "wrong", "note": "= câu nói khiếm nhã, thô lỗ"}, {"word": "Of course", "badge": "dĩ nhiên rồi", "badgeType": "wrong", "note": "= không tự nhiên khi được hỏi thăm sức khỏe"}, {"word": "Thanks for asking", "badge": "cảm ơn bạn đã hỏi thăm", "badgeType": "correct", "note": "= lời cảm ơn lịch sự và chuẩn mực khi được hỏi thăm"}], "whyCorrect": {"rule": "Phép lịch sự trong giao tiếp tiếng Anh:", "content": "Khi người khác quan tâm hỏi thăm sức khỏe của mình, lời đáp chuẩn mực và lịch sự nhất là: <span class='highlight-green-tag'>Thanks for asking</span> (Cảm ơn bạn đã hỏi thăm)."}, "whyWrong": [{"word": "Not bad", "reason": "thiếu lời cảm ơn lịch sự."}, {"word": "Stay away from me", "reason": "bất lịch sự, thô lỗ."}, {"word": "Of course", "reason": "không phù hợp để đáp lại sự quan tâm."}]}, {"id": 26, "type": "Giao tiếp thông thường (Communication)", "question": "Question 26: Justin: 'Send me a text message tomorrow.' - Katie: '______'", "options": [{"key": "A", "text": "It's my pleasure"}, {"key": "B", "text": "What's your number?"}, {"key": "C", "text": "Thank you, Justin."}, {"key": "D", "text": "How dare you?"}], "correct": "B", "trans": "Dịch: Justin: 'Ngày mai hãy nhắn tin cho tớ nhé.' - Katie: 'Số điện thoại của cậu là gì nhỉ?'", "analysis": [{"word": "It's my pleasure", "badge": "niềm vinh hạnh của tôi", "badgeType": "wrong", "note": "= dùng đáp lại lời cảm ơn trang trọng"}, {"word": "What's your number?", "badge": "hỏi số điện thoại", "badgeType": "correct", "note": "= muốn gửi tin nhắn thì phải hỏi số điện thoại của bạn"}, {"word": "Thank you, Justin.", "badge": "cảm ơn Justin", "badgeType": "wrong", "note": "= Justin nhờ nhắn tin chứ không phải ban ơn"}, {"word": "How dare you?", "badge": "sao bạn dám?", "badgeType": "wrong", "note": "= câu tức giận, hoàn toàn không phù hợp"}], "whyCorrect": {"rule": "Phản hồi hợp lý theo ngữ cảnh:", "content": "Khi một người đề nghị nhắn tin cho họ (Send me a text message), điều tự nhiên và logic nhất là hỏi số điện thoại để có thể gửi tin: <span class='highlight-green-tag'>What's your number?</span>."}, "whyWrong": [{"word": "It's my pleasure", "reason": "dùng khi đáp lại lời cảm ơn 'Thank you'."}, {"word": "Thank you, Justin.", "reason": "người ta nhờ mình nhắn tin chứ không cho quà."}, {"word": "How dare you?", "reason": "chỉ dùng khi tức giận/bị xúc phạm."}]}, {"id": 27, "type": "Biển báo giao thông (Traffic Sign)", "question": "Question 27: Read the sign below. What does the sign say?", "hasCustomVisual": "no_alcohol_drive", "options": [{"key": "A", "text": "You must be careful with drunk drivers."}, {"key": "B", "text": "You shouldn't carry glasses in your car."}, {"key": "C", "text": "You should be careful as there is a pub ahead."}, {"key": "D", "text": "You mustn't drive if you drink alcohol."}], "correct": "D", "trans": "Dịch: Biển báo dưới đây có ý nghĩa gì?", "analysis": [{"word": "Option A", "badge": "phải cẩn thận lái xe say", "badgeType": "wrong", "note": "= biển cấm trực tiếp hành vi uống rượu lái xe"}, {"word": "Option B", "badge": "không mang cốc ly lên xe", "badgeType": "wrong", "note": "= dịch nghĩa thô thiển của hình ly rượu"}, {"word": "Option C", "badge": "phía trước có quán rượu", "badgeType": "wrong", "note": "= không phải biển báo chỉ dẫn địa điểm"}, {"word": "Option D", "badge": "cấm lái xe khi uống rượu", "badgeType": "correct", "note": "= Bạn không được phép lái xe nếu đã uống rượu bia"}], "whyCorrect": {"rule": "Ý nghĩa biển báo cấm (Vạch đỏ gạch chéo):", "content": "Biển báo có hình chiếc ô tô và ly rượu bị gạch chéo đỏ biểu thị thông điệp an toàn giao thông: <b>Đã uống rượu bia thì không lái xe</b> → <span class='highlight-green-tag'>You mustn't drive if you drink alcohol</span>."}, "whyWrong": [{"word": "Option A", "reason": "biển nhắm đến người điều khiển phương tiện chứ không chỉ cảnh báo thụ động."}, {"word": "Option B", "reason": "hiểu sai biểu tượng ly rượu thành đồ thủy tinh."}, {"word": "Option C", "reason": "không phải biển chỉ dẫn quán rượu."}]}, {"id": 28, "type": "Biển báo quy định (Notice Sign)", "question": "Question 28: What is the meaning of the sign below?", "hasCustomVisual": "face_masks_required", "options": [{"key": "A", "text": "Only students need to wear face masks."}, {"key": "B", "text": "You should only wear face masks are during lunchtime."}, {"key": "C", "text": "You must wear a face mask in this area."}, {"key": "D", "text": "Face masks are optional if you feel healthy."}], "correct": "C", "trans": "Dịch: Ý nghĩa của biển báo dưới đây là gì?", "analysis": [{"word": "Option A", "badge": "chỉ học sinh phải đeo", "badgeType": "wrong", "note": "= biển áp dụng cho mọi người trong khu vực"}, {"word": "Option B", "badge": "chỉ đeo vào giờ ăn trưa", "badgeType": "wrong", "note": "= không hề nhắc tới giờ ăn trưa"}, {"word": "Option C", "badge": "bắt buộc đeo khẩu trang", "badgeType": "correct", "note": "= Bạn bắt buộc phải đeo khẩu trang trong khu vực này"}, {"word": "Option D", "badge": "tùy chọn tự do", "badgeType": "wrong", "note": "= 'Required' là bắt buộc, không phải tùy chọn (optional)"}], "whyCorrect": {"rule": "Nghĩa của từ 'REQUIRED':", "content": "Từ <b>REQUIRED</b> có nghĩa là bắt buộc. Do đó biển báo 'FACE MASKS REQUIRED' có nghĩa là: <span class='highlight-green-tag'>You must wear a face mask in this area</span>."}, "whyWrong": [{"word": "Option A", "reason": "biển không chỉ dành riêng cho học sinh."}, {"word": "Option B", "reason": "không có thông tin về giờ ăn trưa."}, {"word": "Option D", "reason": "'required' là bắt buộc, trái nghĩa với 'optional' (tự chọn)."}]}, {"id": 29, "type": "Biển báo quy định (Notice Sign)", "question": "Question 29: What does the sign mean?", "hasCustomVisual": "children_with_parents", "options": [{"key": "A", "text": "Children can enter this place alone."}, {"key": "B", "text": "Children can't play in this area."}, {"key": "C", "text": "Only children can enter this place."}, {"key": "D", "text": "Children can't enter this area without their parents."}], "correct": "D", "trans": "Dịch: Biển báo này có ý nghĩa gì?", "analysis": [{"word": "Option A", "badge": "trẻ em vào một mình", "badgeType": "wrong", "note": "= trái ngược với chữ 'only with parents'"}, {"word": "Option B", "badge": "trẻ em không được chơi", "badgeType": "wrong", "note": "= không cấm chơi, chỉ yêu cầu có bố mẹ đi cùng"}, {"word": "Option C", "badge": "chỉ trẻ em mới được vào", "badgeType": "wrong", "note": "= sai hoàn toàn ý nghĩa"}, {"word": "Option D", "badge": "không vào nếu thiếu bố mẹ", "badgeType": "correct", "note": "= Trẻ em không thể vào khu vực này nếu không có bố mẹ đi cùng"}], "whyCorrect": {"rule": "Phân tích cụm từ 'ONLY WITH PARENTS':", "content": "Biển báo ghi rõ <b>CHILDREN ONLY WITH PARENTS</b> (Trẻ em CHỈ ĐƯỢC VÀO CÙNG BỐ MẸ) đồng nghĩa với việc: <span class='highlight-green-tag'>Children can't enter this area without their parents</span>."}, "whyWrong": [{"word": "Option A", "reason": "'alone' (một mình) trái ngược hoàn toàn với 'with parents'."}, {"word": "Option B", "reason": "biển không cấm chơi."}, {"word": "Option C", "reason": "biển yêu cầu cả người lớn đi kèm chứ không chỉ có trẻ em."}]}, {"id": 30, "type": "Biển báo vệ sinh (Notice Sign)", "question": "Question 30: What does the sign mean?", "hasCustomVisual": "keep_area_clean", "options": [{"key": "A", "text": "You don't have to keep anything clean here."}, {"key": "B", "text": "You can not enter this area if it is dirty."}, {"key": "C", "text": "Someone comes to clean this place every day."}, {"key": "D", "text": "If you use this area, you must clean it."}], "correct": "D", "trans": "Dịch: Biển báo thông báo này có ý nghĩa gì?", "analysis": [{"word": "Option A", "badge": "không cần giữ sạch", "badgeType": "wrong", "note": "= mâu thuẫn hoàn toàn với chữ 'KEEP CLEAN'"}, {"word": "Option B", "badge": "không được vào nếu bẩn", "badgeType": "wrong", "note": "= không phải biển cấm vào"}, {"word": "Option C", "badge": "có người đến dọn hàng ngày", "badgeType": "wrong", "note": "= không có thông tin này"}, {"word": "Option D", "badge": "dùng xong phải dọn sạch", "badgeType": "correct", "note": "= Nếu bạn sử dụng khu vực này, bạn phải giữ gìn/dọn dẹp nó sạch sẽ"}], "whyCorrect": {"rule": "Nội dung bảng thông báo 'KEEP AREA CLEAN':", "content": "Khẩu hiệu <b>NOTICE: KEEP AREA CLEAN</b> (Thông báo: Giữ khu vực sạch sẽ) yêu cầu người sử dụng phải có trách nhiệm giữ gìn vệ sinh chung: <span class='highlight-green-tag'>If you use this area, you must clean it</span>."}, "whyWrong": [{"word": "Option A", "reason": "nghĩa trái ngược hoàn toàn."}, {"word": "Option B", "reason": "biển không cấm vào cửa."}, {"word": "Option C", "reason": "biển yêu cầu người dùng tự giác chứ không phải thông báo lịch lao công."}]}, {"id": 31, "type": "Đọc hiểu - Sắp xếp câu (Reading - Sentence Ordering)", "question": "Question 31: Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "subtext": "<b>My Favorite Hobby</b><br>Playing the piano is my favorite hobby. ______________________________.<br>a. I started learning how to play the piano two years ago.<br>b. I often play the piano in my free time.<br>c. It helps me relax and makes me happy.", "options": [{"key": "A", "text": "a - b - c"}, {"key": "B", "text": "b - a - c"}, {"key": "C", "text": "c - a - b"}, {"key": "D", "text": "b - c - a"}], "correct": "A", "trans": "Dịch: Sắp xếp các câu (a-c) theo thứ tự đúng để tạo thành đoạn văn hoàn chỉnh có logic.", "analysis": [{"word": "a - b - c", "badge": "logic thời gian chuẩn", "badgeType": "correct", "note": "= bắt đầu học 2 năm trước (a) → thường chơi lúc rảnh (b) → giúp thư giãn (c)"}, {"word": "b - a - c", "badge": "chưa tối ưu mạch kể", "badgeType": "wrong", "note": "= nêu thói quen trước khi giới thiệu mốc bắt đầu"}, {"word": "c - a - b", "badge": "lộn xộn", "badgeType": "wrong", "note": "= nêu cảm xúc trước khi kể thói quen"}, {"word": "b - c - a", "badge": "sai mạch thời gian", "badgeType": "wrong", "note": "= câu mốc bắt đầu (a) bị để ở cuối"}], "whyCorrect": {"rule": "Mạch phát triển đoạn văn theo thời gian:", "content": "Trình tự hợp lý nhất: Sau câu mở đầu 'Playing the piano is my favorite hobby', người viết giới thiệu mốc thời gian bắt đầu học (<b>a</b>: two years ago) → thói quen hiện tại (<b>b</b>: often play in my free time) → lợi ích và cảm xúc mang lại (<b>c</b>: helps me relax). Vậy thứ tự là: <span class='highlight-green-tag'>a - b - c</span>."}, "whyWrong": [{"word": "b - a - c", "reason": "chưa tối ưu tính liên kết thời gian."}, {"word": "c - a - b", "reason": "ngắt mạch cảm xúc và hành động."}, {"word": "b - c - a", "reason": "mốc bắt đầu 2 năm trước không nên đặt ở cuối đoạn."}], "passage_key": "hobby", "is_first_in_passage": "hobby"}, {"id": 32, "type": "Đọc hiểu - Câu kết đoạn (Text Ending)", "question": "Question 32: Choose the sentence that can end the text (in Question 31) most appropriately:", "options": [{"key": "A", "text": "My dream is to become a famous pianist one day."}, {"key": "B", "text": "I also like reading books in my free time."}, {"key": "C", "text": "I often do my homework at home."}, {"key": "D", "text": "I don't like listening to piano music."}], "correct": "A", "trans": "Dịch: Chọn câu có thể kết thúc đoạn văn (ở Câu 31) một cách phù hợp nhất.", "analysis": [{"word": "Option A", "badge": "ước mơ thành nghệ sĩ piano", "badgeType": "correct", "note": "= kết đoạn hoàn hảo cho bài viết về sở thích chơi piano"}, {"word": "Option B", "badge": "sở thích đọc sách", "badgeType": "wrong", "note": "= chuyển sang sở thích khác, làm loãng chủ đề piano"}, {"word": "Option C", "badge": "làm bài tập ở nhà", "badgeType": "wrong", "note": "= lạc đề hoàn toàn so với chủ đề sở thích"}, {"word": "Option D", "badge": "không thích nghe piano", "badgeType": "wrong", "note": "= mâu thuẫn hoàn toàn với việc yêu thích chơi piano"}], "whyCorrect": {"rule": "Tính thống nhất và hướng tới tương lai của câu kết:", "content": "Một đoạn văn kể về niềm đam mê chơi đàn piano thì câu kết tự nhiên, truyền cảm hứng và phù hợp nhất là chia sẻ về ước mơ gắn liền với nhạc cụ đó: <span class='highlight-green-tag'>My dream is to become a famous pianist one day</span> (Ước mơ của tôi là trở thành một nghệ sĩ piano nổi tiếng vào một ngày nào đó)."}, "whyWrong": [{"word": "Option B", "reason": "lạc sang việc đọc sách."}, {"word": "Option C", "reason": "nói về bài tập về nhà, không liên quan."}, {"word": "Option D", "reason": "mâu thuẫn với sở thích chơi piano."}], "passage_key": "hobby"}, {"id": 33, "type": "Đọc hiểu - Sắp xếp câu (Sentence Ordering)", "question": "Question 33: Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "subtext": "<b>Healthy Eating Habits</b><br>Having a healthy diet is important. ______________________________.<br>a. Moreover, you should drink enough water and shouldn't eat too many fried foods.<br>b. Eating healthy helps you stay strong and active.<br>c. It is important to eat a variety of foods, such as fruits, vegetables, and grains,...", "options": [{"key": "A", "text": "a - b - c"}, {"key": "B", "text": "b - a - c"}, {"key": "C", "text": "c - a - b"}, {"key": "D", "text": "b - c - a"}], "correct": "D", "trans": "Dịch: Sắp xếp các câu (a-c) theo thứ tự đúng để tạo thành đoạn văn logic về thói quen ăn uống lành mạnh.", "analysis": [{"word": "a - b - c", "badge": "sai vị trí 'Moreover'", "badgeType": "wrong", "note": "= 'Moreover' (hơn nữa) dùng để bổ sung ý, không thể đứng đầu"}, {"word": "b - a - c", "badge": "chưa logic", "badgeType": "wrong", "note": "= đưa 'Moreover' vào trước ý chính về thực phẩm"}, {"word": "c - a - b", "badge": "thiếu mở ý lợi ích", "badgeType": "wrong", "note": "= câu b nêu lợi ích tổng quan nên đặt trước"}, {"word": "b - c - a", "badge": "chuẩn xác logic", "badgeType": "correct", "note": "= nêu lợi ích (b) → nêu các món nên ăn (c) → bổ sung nước và hạn chế đồ chiên (a)"}], "whyCorrect": {"rule": "Mạch phát triển đoạn văn theo luận điểm:", "content": "Sau câu chủ đề 'Having a healthy diet is important': Câu <b>b</b> giải thích vì sao quan trọng (helps stay strong and active) → Câu <b>c</b> hướng dẫn các món cần ăn (variety of foods: fruits, vegetables, grains) → Câu <b>a</b> có liên từ <b>Moreover</b> (hơn nữa) bổ sung thêm lời khuyên uống nước và hạn chế đồ chiên rán. Vậy thứ tự chuẩn là: <span class='highlight-green-tag'>b - c - a</span>."}, "whyWrong": [{"word": "a - b - c", "reason": "'Moreover' chỉ đứng sau một lời khuyên đã nêu trước đó."}, {"word": "b - a - c", "reason": "chưa đúng mạch diễn giải."}, {"word": "c - a - b", "reason": "câu b là lý do tổng quan cần đứng đầu."}], "passage_key": "eating", "is_first_in_passage": "eating"}, {"id": 34, "type": "Đọc hiểu - Câu kết đoạn (Text Ending)", "question": "Question 34: Choose the sentence that can end the text (in Question 33) most appropriately:", "options": [{"key": "A", "text": "This way, you can enjoy your favorite junk food every day."}, {"key": "B", "text": "By following these habits, you can maintain good health and feel more energetic."}, {"key": "C", "text": "It is better to eat whatever you want without worrying about your health."}, {"key": "D", "text": "Therefore, you should avoid eating fresh vegetables."}], "correct": "B", "trans": "Dịch: Chọn câu có thể kết thúc đoạn văn (ở Câu 33) một cách phù hợp nhất.", "analysis": [{"word": "Option A", "badge": "ăn đồ ăn vặt mỗi ngày", "badgeType": "wrong", "note": "= trái ngược với lời khuyên ăn uống lành mạnh"}, {"word": "Option B", "badge": "duy trì sức khỏe & năng lượng", "badgeType": "correct", "note": "= tóm tắt lợi ích của các thói quen ăn uống lành mạnh đã nêu"}, {"word": "Option C", "badge": "thích gì ăn nấy", "badgeType": "wrong", "note": "= cổ súy thói quen xấu, mâu thuẫn đoạn văn"}, {"word": "Option D", "badge": "tránh ăn rau tươi", "badgeType": "wrong", "note": "= phản khoa học và sai nội dung bài đọc"}], "whyCorrect": {"rule": "Câu kết luận tóm lược chủ đề:", "content": "Câu kết cần khẳng định lại giá trị của các thói quen dinh dưỡng: <span class='highlight-green-tag'>By following these habits, you can maintain good health and feel more energetic</span> (Bằng cách tuân theo các thói quen này, bạn có thể duy trì sức khỏe tốt và cảm thấy tràn đầy năng lượng hơn)."}, "whyWrong": [{"word": "Option A", "reason": "bài khuyên không nên ăn nhiều đồ chiên rán/đồ ăn vặt."}, {"word": "Option C", "reason": "mâu thuẫn với việc ăn uống có kiểm soát lành mạnh."}, {"word": "Option D", "reason": "rau củ là thực phẩm được khuyến khích ăn."}], "passage_key": "eating"}, {"id": 35, "type": "Đọc hiểu - Sắp xếp câu (Sentence Ordering)", "question": "Question 35: Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "subtext": "<b>Helping the Community</b><br>Community service is important. ______________________________.<br>a. Last weekend, I joined a group of students to clean up the local park.<br>b. We collected trash, planted trees, and painted benches to make the park more beautiful.<br>c. I felt great to help the environment and make our community a better place.", "options": [{"key": "A", "text": "a - b - c"}, {"key": "B", "text": "b - a - c"}, {"key": "C", "text": "c - a - b"}, {"key": "D", "text": "b - c - a"}], "correct": "A", "trans": "Dịch: Sắp xếp các câu (a-c) theo thứ tự đúng để tạo thành đoạn văn hoàn chỉnh về hoạt động vì cộng đồng.", "analysis": [{"word": "a - b - c", "badge": "trình tự chuẩn", "badgeType": "correct", "note": "= tham gia dọn công viên (a) → các việc cụ thể đã làm (b) → cảm xúc tự hào (c)"}, {"word": "b - a - c", "badge": "chưa giới thiệu bối cảnh", "badgeType": "wrong", "note": "= 'We collected trash' mà chưa nói đến nhóm học sinh dọn công viên"}, {"word": "c - a - b", "badge": "nêu cảm xúc trước", "badgeType": "wrong", "note": "= chưa làm việc gì mà đã cảm thấy tuyệt vời"}, {"word": "b - c - a", "badge": "sai thời gian", "badgeType": "wrong", "note": "= câu giới thiệu 'Last weekend' bị để ở cuối"}], "whyCorrect": {"rule": "Trình tự kể chuyện tường thuật sự việc:", "content": "Mạch kể chuẩn: Câu <b>a</b> giới thiệu thời gian và sự kiện (Last weekend, I joined... to clean up the park) → Câu <b>b</b> kể chi tiết các công việc đã làm (collected trash, planted trees, painted benches) → Câu <b>c</b> nêu cảm nghĩ, cảm xúc sau khi hoàn thành (felt great to help...). Thứ tự đúng: <span class='highlight-green-tag'>a - b - c</span>."}, "whyWrong": [{"word": "b - a - c", "reason": "chưa giới thiệu công viên nào mà đã nói 'We collected trash'."}, {"word": "c - a - b", "reason": "cảm xúc phải đến sau khi làm xong công việc."}, {"word": "b - c - a", "reason": "sai logic thời gian."}], "passage_key": "community", "is_first_in_passage": "community"}, {"id": 36, "type": "Đọc hiểu - Câu kết đoạn (Text Ending)", "question": "Question 36: Choose the sentence that can end the text (in Question 35) most appropriately:", "options": [{"key": "A", "text": "I decided to buy new clothes for myself."}, {"key": "B", "text": "Many people thanked us for our hard work, and it made me feel proud."}, {"key": "C", "text": "After that, I went home and played video games all day."}, {"key": "D", "text": "Nobody cared about our community work."}], "correct": "B", "trans": "Dịch: Chọn câu có thể kết thúc đoạn văn (ở Câu 35) một cách phù hợp nhất.", "analysis": [{"word": "Option A", "badge": "mua quần áo mới", "badgeType": "wrong", "note": "= không liên quan đến ý nghĩa của công việc thiện nguyện"}, {"word": "Option B", "badge": "mọi người cảm ơn & tự hào", "badgeType": "correct", "note": "= sự ghi nhận của cộng đồng và niềm tự hào của tình nguyện viên"}, {"word": "Option C", "badge": "chơi điện tử cả ngày", "badgeType": "wrong", "note": "= làm giảm ý nghĩa tích cực của bài viết"}, {"word": "Option D", "badge": "không ai quan tâm", "badgeType": "wrong", "note": "= mang tính tiêu cực, trái tinh thần bài viết"}], "whyCorrect": {"rule": "Ý nghĩa nhân văn của hoạt động cộng đồng:", "content": "Câu kết hoàn hảo thể hiện sự lan tỏa của việc làm tốt: <span class='highlight-green-tag'>Many people thanked us for our hard work, and it made me feel proud</span> (Nhiều người đã cảm ơn sự chăm chỉ của chúng tôi, và điều đó khiến tôi cảm thấy vô cùng tự hào)."}, "whyWrong": [{"word": "Option A", "reason": "nói về việc mua sắm cá nhân."}, {"word": "Option C", "reason": "lạc sang việc chơi game."}, {"word": "Option D", "reason": "mang sắc thái bi quan, không hợp lý."}], "passage_key": "community"}, {"id": 37, "type": "Điền từ đoạn văn (Cloze Test - Vườn của ông bà)", "question": "Question 37: Read the passage and choose the correct word for blank (37):", "subtext": "<b>MY GRANDPARENTS' GARDEN</b><br>1. My grandparents (37)______ a big garden with a lot of vegetables.", "options": [{"key": "A", "text": "has"}, {"key": "B", "text": "have"}, {"key": "C", "text": "had"}, {"key": "D", "text": "will have"}], "correct": "B", "trans": "Dịch: Ông bà của tôi có một khu vườn lớn với rất nhiều loại rau củ.", "analysis": [{"word": "has", "badge": "số ít", "badgeType": "wrong", "note": "= chỉ dùng cho chủ ngữ ngôi thứ 3 số ít He/She/It"}, {"word": "have", "badge": "số nhiều hiện tại", "badgeType": "correct", "note": "= đi với chủ ngữ số nhiều 'My grandparents'"}, {"word": "had", "badge": "quá khứ", "badgeType": "wrong", "note": "= đoạn văn đang miêu tả thực tế hiện tại"}, {"word": "will have", "badge": "tương lai", "badgeType": "wrong", "note": "= khu vườn đã có sẵn ở hiện tại"}], "whyCorrect": {"rule": "Hòa hợp chủ vị thì Hiện tại đơn:", "content": "Chủ ngữ <b>My grandparents</b> (ông bà của tôi) là danh từ số nhiều (có -s). Ở thì Hiện tại đơn diễn tả sự sở hữu thực tế, động từ nguyên thể là: <span class='highlight-green-tag'>have</span>."}, "whyWrong": [{"word": "has", "reason": "chỉ dùng cho chủ ngữ số ít."}, {"word": "had", "reason": "đoạn văn miêu tả ở hiện tại (come, grow, says, provide)."}, {"word": "will have", "reason": "sai thì tương lai."}], "passage_key": "garden", "is_first_in_passage": "garden"}, {"id": 38, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 38: Read the passage and choose the correct word for blank (38):", "subtext": "2. Vegetables come in different shapes, sizes, and (38)______.", "options": [{"key": "A", "text": "prices"}, {"key": "B", "text": "colour"}, {"key": "C", "text": "weight"}, {"key": "D", "text": "height"}], "correct": "B", "trans": "Dịch: Các loại rau củ có nhiều hình dạng, kích thước và màu sắc khác nhau.", "analysis": [{"word": "prices", "badge": "giá cả", "badgeType": "wrong", "note": "= đang miêu tả đặc điểm tự nhiên của rau trong vườn, không phải buôn bán"}, {"word": "colour", "badge": "màu sắc", "badgeType": "correct", "note": "= shapes, sizes, and colour (liên kết với câu 4 'coloured vegetables')"}, {"word": "weight", "badge": "trọng lượng", "badgeType": "wrong", "note": "= ít tự nhiên trong cụm miêu tả hình thức rau củ"}, {"word": "height", "badge": "chiều cao", "badgeType": "wrong", "note": "= không dùng miêu tả đặc trưng củ quả"}], "whyCorrect": {"rule": "Mối liên kết từ vựng trong văn bản:", "content": "Cụm liệt kê hình thức bên ngoài: 'shapes (hình dáng), sizes (kích thước), and <span class='highlight-green-tag'>colour</span> (màu sắc)'. Hơn nữa, câu số 4 nhắc tới 'coloured vegetables' càng khẳng định đáp án là 'colour'."}, "whyWrong": [{"word": "prices", "reason": "vườn nhà trồng để ăn, không nói về giá bán."}, {"word": "weight", "reason": "không tạo thành cụm từ tự nhiên."}, {"word": "height", "reason": "không dùng cho rau củ quả."}], "passage_key": "garden"}, {"id": 39, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 39: Read the passage and choose the correct word for blank (39):", "subtext": "3. They grow carrots and potatoes (39)______ the ground.", "options": [{"key": "A", "text": "on"}, {"key": "B", "text": "above"}, {"key": "C", "text": "under"}, {"key": "D", "text": "at"}], "correct": "C", "trans": "Dịch: Họ trồng cà rốt và khoai tây ở dưới lòng đất.", "analysis": [{"word": "on", "badge": "trên bề mặt", "badgeType": "wrong", "note": "= cà rốt và khoai tây là củ mọc chìm dưới đất"}, {"word": "above", "badge": "phía trên", "badgeType": "wrong", "note": "= không mọc lơ lửng trên mặt đất"}, {"word": "under", "badge": "ở dưới", "badgeType": "correct", "note": "= under the ground: dưới lòng đất (đặc trưng của củ cà rốt, khoai tây)"}, {"word": "at", "badge": "tại", "badgeType": "wrong", "note": "= không đi với the ground"}], "whyCorrect": {"rule": "Kiến thức thực tế & Giới từ nơi chốn:", "content": "Carrots (cà rốt) và potatoes (khoai tây) là các loại củ sinh trưởng và phát triển ở sâu bên dưới lớp đất. Ta dùng giới từ: <span class='highlight-green-tag'>under the ground</span>."}, "whyWrong": [{"word": "on", "reason": "trên mặt đất (như quả bí ngô, cà chua)."}, {"word": "above", "reason": "ở trên cao."}, {"word": "at", "reason": "sai giới từ."}], "passage_key": "garden"}, {"id": 40, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 40: Read the passage and choose the correct word for blank (40):", "subtext": "4. My grandfather says that coloured vegetables are very good for health (40)______ they provide a lot of natural vitamins.", "options": [{"key": "A", "text": "so"}, {"key": "B", "text": "because"}, {"key": "C", "text": "but"}, {"key": "D", "text": "or"}], "correct": "B", "trans": "Dịch: Ông tôi nói rằng các loại rau củ nhiều màu sắc rất tốt cho sức khỏe bởi vì chúng cung cấp nhiều vitamin tự nhiên.", "analysis": [{"word": "so", "badge": "vì vậy", "badgeType": "wrong", "note": "= chỉ kết quả (vế sau là lý do giải thích)"}, {"word": "because", "badge": "bởi vì", "badgeType": "correct", "note": "= liên từ chỉ nguyên nhân giải thích vì sao tốt cho sức khỏe"}, {"word": "but", "badge": "nhưng", "badgeType": "wrong", "note": "= chỉ sự tương phản đối lập"}, {"word": "or", "badge": "hoặc là", "badgeType": "wrong", "note": "= chỉ sự lựa chọn"}], "whyCorrect": {"rule": "Liên từ chỉ nguyên nhân:", "content": "Vế sau 'they provide a lot of natural vitamins' (chúng cung cấp nhiều vitamin tự nhiên) giải thích nguyên nhân vì sao rau củ tốt cho sức khỏe. Ta dùng liên từ: <span class='highlight-green-tag'>because</span>."}, "whyWrong": [{"word": "so", "reason": "vế sau là lý do chứ không phải kết quả."}, {"word": "but", "reason": "hai vế không đối lập."}, {"word": "or", "reason": "sai ngữ nghĩa."}], "passage_key": "garden"}, {"id": 41, "type": "Đọc hiểu (Reading Comprehension)", "question": "Question 41: What is the main idea of the passage 'The benefits of voluntary work'?", "options": [{"key": "A", "text": "Voluntary work is only for young people."}, {"key": "B", "text": "Voluntary work is for everyone at different ages."}, {"key": "C", "text": "Voluntary work is difficult and boring."}, {"key": "D", "text": "Voluntary work is only done in clubs."}], "correct": "B", "trans": "Dịch: Ý chính của đoạn văn 'Lợi ích của công việc tình nguyện' là gì?", "analysis": [{"word": "Option A", "badge": "chỉ cho người trẻ", "badgeType": "wrong", "note": "= bài nói 'different age groups'"}, {"word": "Option B", "badge": "cho mọi người ở nhiều lứa tuổi", "badgeType": "correct", "note": "= công việc tình nguyện thu hút người tham gia ở nhiều lứa tuổi khác nhau"}, {"word": "Option C", "badge": "khó khăn và nhàm chán", "badgeType": "wrong", "note": "= bài nêu rất nhiều lợi ích to lớn và thú vị"}, {"word": "Option D", "badge": "chỉ làm ở câu lạc bộ", "badgeType": "wrong", "note": "= thông tin phiến diện, sai lệch"}], "whyCorrect": {"rule": "Ý chính trong đoạn văn mở đầu:", "content": "Đoạn 1 nêu rõ: 'volunteer work attracts a large number of attendants from <b>different age groups</b> because of its huge benefits'. Trong 4 đáp án, chỉ có <span class='highlight-green-tag'>Voluntary work is for everyone at different ages</span> là nhận định đúng đắn và bao quát nhất."}, "whyWrong": [{"word": "Option A", "reason": "sai từ 'only for young people'."}, {"word": "Option C", "reason": "trái ngược với nội dung bài ca ngợi lợi ích."}, {"word": "Option D", "reason": "sai từ 'only done in clubs'."}], "passage_key": "voluntary", "is_first_in_passage": "voluntary"}, {"id": 42, "type": "Đọc hiểu (Reading Comprehension)", "question": "Question 42: Which of the following is NOT true in the passage?", "options": [{"key": "A", "text": "Voluntary work helps people develop social skills."}, {"key": "B", "text": "Volunteers learn how to work in teams."}, {"key": "C", "text": "Voluntary work is only for adults."}, {"key": "D", "text": "Voluntary work can help people travel and explore."}], "correct": "C", "trans": "Dịch: Điều nào sau đây KHÔNG ĐÚNG theo đoạn văn?", "analysis": [{"word": "Option A", "badge": "phát triển kỹ năng xã hội", "badgeType": "wrong", "note": "= thông tin đúng có trong bài (develop social skills)"}, {"word": "Option B", "badge": "học làm việc nhóm", "badgeType": "wrong", "note": "= thông tin đúng có trong bài (how to work in a team)"}, {"word": "Option C", "badge": "chỉ dành cho người lớn", "badgeType": "correct", "note": "= ĐÂY LÀ THÔNG TIN SAI vì bài nhắc đến cả 'adolescents' (thanh thiếu niên)"}, {"word": "Option D", "badge": "giúp du lịch và khám phá", "badgeType": "wrong", "note": "= thông tin đúng có trong bài (travel more and explore)"}], "whyCorrect": {"rule": "Tìm thông tin sai lệch (NOT true):", "content": "Bài đọc khẳng định công việc tình nguyện mang lại cơ hội cho <b>adolescents</b> (thanh thiếu niên) và <b>different age groups</b> (nhiều nhóm tuổi). Nhận định <span class='highlight-green-tag'>Voluntary work is only for adults</span> (chỉ dành cho người lớn) là hoàn toàn sai so với bài đọc."}, "whyWrong": [{"word": "Option A", "reason": "thông tin đúng trong bài."}, {"word": "Option B", "reason": "thông tin đúng trong bài."}, {"word": "Option D", "reason": "thông tin đúng trong bài."}], "passage_key": "voluntary"}, {"id": 43, "type": "Đọc hiểu (Reading Comprehension)", "question": "Question 43: Why does voluntary work attract people from different age groups?", "options": [{"key": "A", "text": "Because it is easy and doesn't require effort."}, {"key": "B", "text": "Because it offers many benefits and opportunities."}, {"key": "C", "text": "Because it is only for young people."}, {"key": "D", "text": "Because it is done only once a year."}], "correct": "B", "trans": "Dịch: Tại sao công việc tình nguyện lại thu hút mọi người thuộc nhiều nhóm tuổi khác nhau?", "analysis": [{"word": "Option A", "badge": "dễ dàng không tốn sức", "badgeType": "wrong", "note": "= không có trong bài"}, {"word": "Option B", "badge": "nhiều lợi ích & cơ hội", "badgeType": "correct", "note": "= vì nó đem lại rất nhiều lợi ích to lớn và cơ hội quý giá"}, {"word": "Option C", "badge": "chỉ cho người trẻ", "badgeType": "wrong", "note": "= mâu thuẫn với 'different age groups'"}, {"word": "Option D", "badge": "chỉ làm 1 lần mỗi năm", "badgeType": "wrong", "note": "= sai thông tin (regular activities)"}], "whyCorrect": {"rule": "Dẫn chứng từ câu đầu tiên bài đọc:", "content": "Câu 1 của bài viết: 'Nowadays, volunteer work attracts a large number of attendants from different age groups <b>because of its huge benefits</b>' (bởi vì những lợi ích to lớn của nó). Điều này trùng khớp với: <span class='highlight-green-tag'>Because it offers many benefits and opportunities</span>."}, "whyWrong": [{"word": "Option A", "reason": "thông tin không đúng."}, {"word": "Option C", "reason": "mâu thuẫn với câu hỏi."}, {"word": "Option D", "reason": "không có trong bài."}], "passage_key": "voluntary"}, {"id": 44, "type": "Đọc hiểu - Từ vựng (Vocabulary in Context)", "question": "Question 44: The word 'adolescents' in the passage refers to ______", "options": [{"key": "A", "text": "Old people"}, {"key": "B", "text": "Teenagers"}, {"key": "C", "text": "Children under 5"}, {"key": "D", "text": "Adults over 30"}], "correct": "B", "trans": "Dịch: Từ 'adolescents' trong đoạn văn ám chỉ đối tượng nào?", "analysis": [{"word": "Old people", "badge": "người già", "badgeType": "wrong", "note": "= người cao tuổi (elderly)"}, {"word": "Teenagers", "badge": "thanh thiếu niên (13-19 tuổi)", "badgeType": "correct", "note": "= adolescents đồng nghĩa với teenagers"}, {"word": "Children under 5", "badge": "trẻ dưới 5 tuổi", "badgeType": "wrong", "note": "= trẻ mẫu giáo, chập chững biết đi (toddlers)"}, {"word": "Adults over 30", "badge": "người lớn trên 30 tuổi", "badgeType": "wrong", "note": "= người trưởng thành"}], "whyCorrect": {"rule": "Từ đồng nghĩa:", "content": "Trong tiếng Anh, danh từ <b>adolescent</b> chỉ người trong độ tuổi vị thành niên, thanh thiếu niên, hoàn toàn đồng nghĩa với <span class='highlight-green-tag'>Teenagers</span> (từ 13 đến 19 tuổi)."}, "whyWrong": [{"word": "Old people", "reason": "là người già."}, {"word": "Children under 5", "reason": "là trẻ nhỏ."}, {"word": "Adults over 30", "reason": "là người trưởng thành."}], "passage_key": "voluntary"}, {"id": 45, "type": "Đọc hiểu - Từ trái nghĩa (Antonyms)", "question": "Question 45: The word 'valuable' in the passage is OPPOSITE in meaning to:", "options": [{"key": "A", "text": "useless"}, {"key": "B", "text": "important"}, {"key": "C", "text": "cheap"}, {"key": "D", "text": "easy"}], "correct": "A", "trans": "Dịch: Từ 'valuable' (quý giá, có giá trị) trong đoạn văn TRÁI NGHĨA với từ nào?", "analysis": [{"word": "useless", "badge": "vô ích, không giá trị", "badgeType": "correct", "note": "= trái nghĩa trực tiếp với valuable (có giá trị)"}, {"word": "important", "badge": "quan trọng", "badgeType": "wrong", "note": "= từ đồng nghĩa gần nghĩa, không phải trái nghĩa"}, {"word": "cheap", "badge": "rẻ tiền", "badgeType": "wrong", "note": "= trái nghĩa với expensive về mặt tiền bạc"}, {"word": "easy", "badge": "dễ dàng", "badgeType": "wrong", "note": "= trái nghĩa với difficult"}], "whyCorrect": {"rule": "Tìm từ trái nghĩa (OPPOSITE):", "content": "Từ <b>valuable</b> trong ngữ cảnh 'valuable experience' nghĩa là kinh nghiệm quý báu, có giá trị lớn. Từ trái nghĩa hoàn toàn là <span class='highlight-green-tag'>useless</span> (vô ích, vô dụng)."}, "whyWrong": [{"word": "important", "reason": "là từ đồng nghĩa (quan trọng)."}, {"word": "cheap", "reason": "chỉ giá tiền vật chất."}, {"word": "easy", "reason": "nghĩa là dễ dàng."}], "passage_key": "voluntary"}, {"id": 46, "type": "Đọc hiểu (Reading Comprehension)", "question": "Question 46: According to the passage, what is one benefit of voluntary work?", "options": [{"key": "A", "text": "It helps you learn how to work alone."}, {"key": "B", "text": "It helps you travel and meet new people."}, {"key": "C", "text": "It teaches you to avoid difficulties."}, {"key": "D", "text": "It stops you from making friends."}], "correct": "B", "trans": "Dịch: Theo đoạn văn, đâu là một lợi ích của công việc tình nguyện?", "analysis": [{"word": "Option A", "badge": "học làm việc một mình", "badgeType": "wrong", "note": "= bài nói dạy làm việc nhóm (work in a team)"}, {"word": "Option B", "badge": "du lịch & gặp gỡ bạn mới", "badgeType": "correct", "note": "= đúng dẫn chứng trong bài (travel more, make many new friends)"}, {"word": "Option C", "badge": "dạy né tránh khó khăn", "badgeType": "wrong", "note": "= bài nói dạy cách đối mặt khó khăn (deal with difficulties)"}, {"word": "Option D", "badge": "ngăn cản kết bạn", "badgeType": "wrong", "note": "= trái ngược bài (make many new friends)"}], "whyCorrect": {"rule": "Dẫn chứng từ đoạn văn:", "content": "Đoạn văn có câu: 'make many new friends through regular activities... have a chance to travel more and explore more interesting things'. Do đó lợi ích chính xác là: <span class='highlight-green-tag'>It helps you travel and meet new people</span>."}, "whyWrong": [{"word": "Option A", "reason": "bài nói dạy làm việc nhóm, không phải làm việc một mình."}, {"word": "Option C", "reason": "dạy giải quyết khó khăn chứ không né tránh."}, {"word": "Option D", "reason": "hoàn toàn sai ngược nghĩa."}], "passage_key": "voluntary"}, {"id": 47, "type": "Điền từ đoạn văn (Cloze Test - Bữa ăn sáng)", "question": "Question 47: Read the passage and choose the correct word for blank (47):", "subtext": "Breakfast is the (47) ______ important meal of the day.", "options": [{"key": "A", "text": "healthy"}, {"key": "B", "text": "tasty"}, {"key": "C", "text": "most"}, {"key": "D", "text": "main"}], "correct": "C", "trans": "Dịch: Bữa ăn sáng là bữa ăn quan trọng nhất trong ngày.", "analysis": [{"word": "healthy", "badge": "tính từ", "badgeType": "wrong", "note": "= không đi với 'the ... important'"}, {"word": "tasty", "badge": "ngon miệng", "badgeType": "wrong", "note": "= không phù hợp cấu trúc so sánh"}, {"word": "most", "badge": "the most + adj", "badgeType": "correct", "note": "= cấu trúc so sánh nhất của tính từ dài 'important'"}, {"word": "main", "badge": "chính", "badgeType": "wrong", "note": "= không đứng giữa 'the' và 'important'"}], "whyCorrect": {"rule": "Cấu trúc so sánh nhất với tính từ dài:", "content": "Đứng trước tính từ dài 'important' và sau mạo từ 'the', cấu trúc so sánh nhất là: <span class='highlight-green-tag'>the most important meal</span> (bữa ăn quan trọng nhất)."}, "whyWrong": [{"word": "healthy", "reason": "sai cấu trúc so sánh."}, {"word": "tasty", "reason": "sai cấu trúc."}, {"word": "main", "reason": "không kết hợp 'the main important'."}], "passage_key": "breakfast", "is_first_in_passage": "breakfast"}, {"id": 48, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 48: Read the passage and choose the correct word for blank (48):", "subtext": "It provides the nutrients your body needs for good health, the calories it needs for (48)______ and helps to maintain your blood sugar level.", "options": [{"key": "A", "text": "strength"}, {"key": "B", "text": "effort"}, {"key": "C", "text": "energy"}, {"key": "D", "text": "power"}], "correct": "C", "trans": "Dịch: Nó cung cấp các chất dinh dưỡng cơ thể cần để có sức khỏe tốt, lượng calo cần thiết để tạo năng lượng...", "analysis": [{"word": "strength", "badge": "sức mạnh cơ bắp", "badgeType": "wrong", "note": "= calo từ thức ăn tạo ra năng lượng chung"}, {"word": "effort", "badge": "sự nỗ lực", "badgeType": "wrong", "note": "= không liên quan đến calo"}, {"word": "energy", "badge": "năng lượng", "badgeType": "correct", "note": "= calories needed for energy: calo cần thiết cho năng lượng hoạt động"}, {"word": "power", "badge": "quyền lực, công suất", "badgeType": "wrong", "note": "= sức mạnh quyền lực/năng lượng điện"}], "whyCorrect": {"rule": "Khái niệm dinh dưỡng sinh học:", "content": "Calories (calo) nạp vào cơ thể qua thức ăn được chuyển hóa để cung cấp <b>năng lượng</b> hoạt động: <span class='highlight-green-tag'>calories it needs for energy</span>."}, "whyWrong": [{"word": "strength", "reason": "sức mạnh thể chất."}, {"word": "effort", "reason": "sự cố gắng, nỗ lực."}, {"word": "power", "reason": "năng lượng máy móc hoặc quyền lực."}], "passage_key": "breakfast"}, {"id": 49, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 49: Read the passage and choose the correct word for blank (49):", "subtext": "Studies have shown that people who don't have breakfast have a low blood sugar level and are often slow, tired, hungry and (49)______ to concentrate.", "options": [{"key": "A", "text": "unable"}, {"key": "B", "text": "enable"}, {"key": "C", "text": "capable"}, {"key": "D", "text": "able"}], "correct": "A", "trans": "Dịch: Các nghiên cứu đã chỉ ra rằng những người không ăn sáng thường chậm chạp, mệt mỏi, đói bụng và không thể tập trung.", "analysis": [{"word": "unable", "badge": "unable to do sth", "badgeType": "correct", "note": "= không thể làm gì (không thể tập trung)"}, {"word": "enable", "badge": "động từ", "badgeType": "wrong", "note": "= enable sb to do sth (đây cần tính từ sau to be 'are')"}, {"word": "capable", "badge": "capable of", "badgeType": "wrong", "note": "= capable đi với giới từ 'of + V-ing', không đi với 'to V'"}, {"word": "able", "badge": "có thể", "badgeType": "wrong", "note": "= mang nghĩa tích cực, mâu thuẫn với mệt mỏi và chậm chạp"}], "whyCorrect": {"rule": "Cấu trúc be unable to do sth:", "content": "Chuỗi tính từ tiêu cực: 'slow, tired, hungry and <span class='highlight-green-tag'>unable</span> to concentrate' (không thể tập trung). Cấu trúc: <b>be unable + to-V</b>."}, "whyWrong": [{"word": "enable", "reason": "là động từ."}, {"word": "capable", "reason": "phải đi với 'of V-ing' (capable of concentrating)."}, {"word": "able", "reason": "nghĩa là có thể, ngược với ngữ cảnh mệt mỏi đói bụng."}], "passage_key": "breakfast"}, {"id": 50, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 50: Read the passage and choose the correct word for blank (50):", "subtext": "It's easier to (50)______ weight if you eat in the morning rather than later in the day.", "options": [{"key": "A", "text": "put"}, {"key": "B", "text": "drop"}, {"key": "C", "text": "lose"}, {"key": "D", "text": "gain"}], "correct": "C", "trans": "Dịch: Sẽ dễ dàng giảm cân hơn nếu bạn ăn vào buổi sáng thay vì ăn muộn vào ban ngày.", "analysis": [{"word": "put", "badge": "put on weight", "badgeType": "wrong", "note": "= thiếu giới từ 'on'"}, {"word": "drop", "badge": "rơi, làm rớt", "badgeType": "wrong", "note": "= không dùng drop weight"}, {"word": "lose", "badge": "lose weight", "badgeType": "correct", "note": "= giảm cân (ngược với gain/put on weight)"}, {"word": "gain", "badge": "tăng cân", "badgeType": "wrong", "note": "= ăn sáng đúng cách giúp kiểm soát và giảm cân hiệu quả"}], "whyCorrect": {"rule": "Cụm từ giảm cân trong kiểm soát cân nặng:", "content": "Cụm từ cố định: <span class='highlight-green-tag'>lose weight</span> = giảm cân. Ăn sáng giúp tăng cường trao đổi chất, từ đó kiểm soát và giảm cân dễ dàng hơn."}, "whyWrong": [{"word": "put", "reason": "phải là put on weight."}, {"word": "drop", "reason": "không đi trực tiếp với weight."}, {"word": "gain", "reason": "ăn sáng lành mạnh giúp giảm cân/duy trì cân nặng chứ không kích thích béo phì."}], "passage_key": "breakfast"}, {"id": 51, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 51: Read the passage and choose the correct word for blank (51):", "subtext": "Dividing the day's calories (51)______ three meals helps you keep fit more efficiently...", "options": [{"key": "A", "text": "into"}, {"key": "B", "text": "for"}, {"key": "C", "text": "in"}, {"key": "D", "text": "up"}], "correct": "A", "trans": "Dịch: Chia lượng calo trong ngày thành 3 bữa ăn giúp bạn giữ dáng hiệu quả hơn...", "analysis": [{"word": "into", "badge": "divide sth into", "badgeType": "correct", "note": "= chia cái gì thành các phần nhỏ"}, {"word": "for", "badge": "cho", "badgeType": "wrong", "note": "= không đi với divide"}, {"word": "in", "badge": "trong", "badgeType": "wrong", "note": "= sai giới từ"}, {"word": "up", "badge": "divide up", "badgeType": "wrong", "note": "= không đi với three meals"}], "whyCorrect": {"rule": "Cấu trúc giới từ đi với động từ 'divide':", "content": "Cấu trúc chuẩn tiếng Anh: <span class='highlight-green-tag'>divide something into...</span> = phân chia cái gì thành các phần (ở đây là chia lượng calo thành 3 bữa)."}, "whyWrong": [{"word": "for", "reason": "sai giới từ."}, {"word": "in", "reason": "sai giới từ."}, {"word": "up", "reason": "divide up thường dùng chia chác tài sản, không đi với 'three meals'."}], "passage_key": "breakfast"}, {"id": 52, "type": "Điền từ đoạn văn (Cloze Test)", "question": "Question 52: Read the passage and choose the correct word for blank (52):", "subtext": "...helps you keep fit more efficiently than (52)______ breakfast and having two larger meals a day.", "options": [{"key": "A", "text": "making"}, {"key": "B", "text": "skipping"}, {"key": "C", "text": "buying"}, {"key": "D", "text": "serving"}], "correct": "B", "trans": "Dịch: ...giúp bạn giữ dáng hiệu quả hơn nhiều so với việc bỏ bữa sáng và ăn hai bữa lớn hơn trong ngày.", "analysis": [{"word": "making", "badge": "làm bữa sáng", "badgeType": "wrong", "note": "= nấu ăn sáng thì không thể chỉ ăn 2 bữa còn lại"}, {"word": "skipping", "badge": "bỏ bữa", "badgeType": "correct", "note": "= skip breakfast: bỏ bữa ăn sáng"}, {"word": "buying", "badge": "mua bữa sáng", "badgeType": "wrong", "note": "= mua bữa sáng thì vẫn là ăn sáng"}, {"word": "serving", "badge": "phục vụ", "badgeType": "wrong", "note": "= không mang nghĩa bỏ bữa"}], "whyCorrect": {"rule": "Thành ngữ bỏ bữa ăn:", "content": "Cụm từ cố định chỉ việc nhịn ăn, bỏ qua một bữa ăn là: <span class='highlight-green-tag'>skip breakfast</span> (bỏ bữa ăn sáng)."}, "whyWrong": [{"word": "making", "reason": "làm bữa sáng."}, {"word": "buying", "reason": "mua đồ ăn sáng."}, {"word": "serving", "reason": "phục vụ món ăn."}], "passage_key": "breakfast"}, {"id": 53, "type": "Chèn câu vào đoạn văn (Sentence Insertion)", "question": "Question 53: Read the text and choose the correct sentence for blank (53):", "subtext": "Many people today are trying to live healthier lives. (53) ______ . Some people also turn to natural remedies when they feel sick.", "options": [{"key": "A", "text": "Some herbs can cause side effects."}, {"key": "B", "text": "They exercise regularly, drink more water, and try to eat well."}, {"key": "C", "text": "They believe herbs can heal the body naturally."}, {"key": "D", "text": "Taking care of your body is a smart habit."}], "correct": "B", "trans": "Dịch: Nhiều người ngày nay đang cố gắng sống lành mạnh hơn. (53) Họ tập thể dục thường xuyên, uống nhiều nước và cố gắng ăn uống tốt.", "analysis": [{"word": "Option A", "badge": "tác dụng phụ của thảo dược", "badgeType": "wrong", "note": "= lạc đề ở câu đầu tiên"}, {"word": "Option B", "badge": "các hành động sống khỏe", "badgeType": "correct", "note": "= diễn giải chi tiết cho câu 'live healthier lives' (tập thể dục, uống nước, ăn tốt)"}, {"word": "Option C", "badge": "tin thảo dược chữa bệnh", "badgeType": "wrong", "note": "= nối tiếp câu sau nói về natural remedies"}, {"word": "Option D", "badge": "câu kết luận", "badgeType": "wrong", "note": "= mang tính đúc kết ở cuối bài"}], "whyCorrect": {"rule": "Mối quan hệ câu chủ đề và câu bổ trợ:", "content": "Sau câu 'Many people today are trying to live healthier lives' (Nhiều người đang cố gắng sống lành mạnh hơn), ta cần câu nêu các hành động cụ thể để minh họa: <span class='highlight-green-tag'>They exercise regularly, drink more water, and try to eat well</span>."}, "whyWrong": [{"word": "Option A", "reason": "nói về tác dụng phụ ở đoạn sau."}, {"word": "Option C", "reason": "nói về thảo dược ở vị trí 54."}, {"word": "Option D", "reason": "là câu kết ở vị trí 56."}], "passage_key": "remedies", "is_first_in_passage": "remedies"}, {"id": 54, "type": "Chèn câu vào đoạn văn (Sentence Insertion)", "question": "Question 54: Read the text and choose the correct sentence for blank (54):", "subtext": "Some people also turn to natural remedies when they feel sick. (54) ______ For example, many drink ginger tea when they have a sore throat or feel cold.", "options": [{"key": "A", "text": "Some herbs can cause side effects."}, {"key": "B", "text": "They exercise regularly, drink more water, and try to eat well."}, {"key": "C", "text": "They believe herbs can heal the body naturally."}, {"key": "D", "text": "Taking care of your body is a smart habit."}], "correct": "C", "trans": "Dịch: Một số người cũng tìm đến các bài thuốc tự nhiên khi bị ốm. (54) Họ tin rằng thảo dược có thể chữa lành cơ thể một cách tự nhiên. Ví dụ, nhiều người uống trà gừng...", "analysis": [{"word": "Option A", "badge": "tác dụng phụ", "badgeType": "wrong", "note": "= đoạn sau có 'However' mới bắt đầu nói tác dụng phụ"}, {"word": "Option B", "badge": "đã dùng ở 53", "badgeType": "wrong", "note": "= nói về tập thể dục"}, {"word": "Option C", "badge": "tin thảo dược chữa lành", "badgeType": "correct", "note": "= giải thích lý do vì sao họ tìm đến 'natural remedies'"}, {"word": "Option D", "badge": "câu kết bài", "badgeType": "wrong", "note": "= đặt ở cuối bài"}], "whyCorrect": {"rule": "Tính mạch lạc giữa các câu trong đoạn:", "content": "Câu trước nói về 'natural remedies' (các phương thuốc tự nhiên), tiếp nối câu này là niềm tin của họ vào thảo dược: <span class='highlight-green-tag'>They believe herbs can heal the body naturally</span>, rồi sau đó mới dẫn chứng 'For example, many drink ginger tea...'."}, "whyWrong": [{"word": "Option A", "reason": "đoạn sau mới nói mặt trái tác dụng phụ."}, {"word": "Option B", "reason": "nằm ở câu 53."}, {"word": "Option D", "reason": "nằm ở câu 56."}], "passage_key": "remedies"}, {"id": 55, "type": "Chèn câu vào đoạn văn (Sentence Insertion)", "question": "Question 55: Read the text and choose the correct sentence for blank (55):", "subtext": "However, not all natural remedies are safe for everyone. (55) ______ It's important to ask a doctor before using herbs, especially if you are already taking medicine.", "options": [{"key": "A", "text": "Some herbs can cause side effects."}, {"key": "B", "text": "They exercise regularly, drink more water, and try to eat well."}, {"key": "C", "text": "They believe herbs can heal the body naturally."}, {"key": "D", "text": "Taking care of your body is a smart habit."}], "correct": "A", "trans": "Dịch: Tuy nhiên, không phải tất cả các bài thuốc tự nhiên đều an toàn cho mọi người. (55) Một số loại thảo dược có thể gây ra tác dụng phụ. Việc hỏi ý kiến bác sĩ là rất quan trọng...", "analysis": [{"word": "Option A", "badge": "gây tác dụng phụ", "badgeType": "correct", "note": "= giải thích vì sao 'not all natural remedies are safe'"}, {"word": "Option B", "badge": "tập thể dục", "badgeType": "wrong", "note": "= không liên quan"}, {"word": "Option C", "badge": "chữa lành", "badgeType": "wrong", "note": "= mâu thuẫn với liên từ 'However' chỉ sự cảnh báo"}, {"word": "Option D", "badge": "thói quen thông minh", "badgeType": "wrong", "note": "= câu kết bài"}], "whyCorrect": {"rule": "Mạch lập luận cảnh báo rủi ro:", "content": "Câu trước cảnh báo 'not all natural remedies are safe' (không phải thảo dược nào cũng an toàn), câu tiếp theo chỉ rõ rủi ro cụ thể: <span class='highlight-green-tag'>Some herbs can cause side effects</span> (Một số loại thảo dược có thể gây tác dụng phụ), do đó cần hỏi ý kiến bác sĩ."}, "whyWrong": [{"word": "Option B", "reason": "nói về thể dục ở câu 53."}, {"word": "Option C", "reason": "nằm ở câu 54."}, {"word": "Option D", "reason": "nằm ở câu 56."}], "passage_key": "remedies"}, {"id": 56, "type": "Chèn câu vào đoạn văn (Sentence Insertion)", "question": "Question 56: Read the text and choose the correct sentence for blank (56):", "subtext": "(56) ______ Choosing safe options and learning more about your health can help you feel better and avoid serious problems in the future.", "options": [{"key": "A", "text": "Some herbs can cause side effects."}, {"key": "B", "text": "They exercise regularly, drink more water, and try to eat well."}, {"key": "C", "text": "They believe herbs can heal the body naturally."}, {"key": "D", "text": "Taking care of your body is a smart habit."}], "correct": "D", "trans": "Dịch: (56) Chăm sóc cơ thể bạn là một thói quen thông minh. Lựa chọn các phương án an toàn và tìm hiểu thêm về sức khỏe sẽ giúp bạn cảm thấy tốt hơn...", "analysis": [{"word": "Option A", "badge": "tác dụng phụ", "badgeType": "wrong", "note": "= nằm ở câu 55"}, {"word": "Option B", "badge": "tập thể dục", "badgeType": "wrong", "note": "= nằm ở câu 53"}, {"word": "Option C", "badge": "thảo dược", "badgeType": "wrong", "note": "= nằm ở câu 54"}, {"word": "Option D", "badge": "thói quen thông minh", "badgeType": "correct", "note": "= câu mở đầu đúc kết cho đoạn kết bài"}], "whyCorrect": {"rule": "Đúc kết thông điệp cuối bài:", "content": "Để mở đầu đoạn kết đưa ra lời khuyên chung, câu kết luận phù hợp nhất mang tính khẳng định: <span class='highlight-green-tag'>Taking care of your body is a smart habit</span> (Chăm sóc cơ thể là một thói quen thông minh)."}, "whyWrong": [{"word": "Option A", "reason": "nằm ở câu 55."}, {"word": "Option B", "reason": "nằm ở câu 53."}, {"word": "Option C", "reason": "nằm ở câu 54."}], "passage_key": "remedies"}, {"id": 57, "type": "Viết lại câu - Nghĩa gần nhất (Sentence Transformation)", "question": "Question 57: She eats fruits and veggies every day, but she keeps gaining weight.", "options": [{"key": "A", "text": "Although she eats fruits and veggies every day, she keeps gaining weight."}, {"key": "B", "text": "Although she keeps gaining weight, she eats only fast food."}, {"key": "C", "text": "Because she eats fruits and veggies every day, she keeps gaining weight."}, {"key": "D", "text": "Although she doesn't eat fruits, she still gains weight."}], "correct": "A", "trans": "Dịch: Cô ấy ăn trái cây và rau xanh mỗi ngày, nhưng cô ấy vẫn tiếp tục bị tăng cân.", "analysis": [{"word": "Option A", "badge": "Although + S + V", "badgeType": "correct", "note": "= Mặc dù cô ấy ăn trái cây rau củ mỗi ngày, cô ấy vẫn tiếp tục tăng cân (chuẩn 100%)"}, {"word": "Option B", "badge": "sai nội dung", "badgeType": "wrong", "note": "= biến đổi thành ăn đồ ăn nhanh (fast food)"}, {"word": "Option C", "badge": "sai liên từ Because", "badgeType": "wrong", "note": "= ăn rau củ không phải là nguyên nhân làm tăng cân"}, {"word": "Option D", "badge": "phủ định sai nghĩa", "badgeType": "wrong", "note": "= biến đổi thành không ăn trái cây"}], "whyCorrect": {"rule": "Chuyển đổi liên từ 'but' sang 'Although':", "content": "Cấu trúc tương đương: <b>Clause 1, but Clause 2 = Although Clause 1, Clause 2</b> (không dùng 'but' cùng 'although'). Phương án đúng giữ nguyên 100% nghĩa gốc: <span class='highlight-green-tag'>Although she eats fruits and veggies every day, she keeps gaining weight</span>."}, "whyWrong": [{"word": "Option B", "reason": "thay đổi nội dung thành 'eats only fast food'."}, {"word": "Option C", "reason": "dùng liên từ 'Because' sai quan hệ đối lập."}, {"word": "Option D", "reason": "sai nghĩa thành 'doesn't eat fruits'."}]}, {"id": 58, "type": "Viết lại câu - Nghĩa gần nhất (Sentence Transformation)", "question": "Question 58: It's a good idea to do exercise regularly.", "options": [{"key": "A", "text": "You should never do exercise even if it's a good idea."}, {"key": "B", "text": "You should do exercise regularly."}, {"key": "C", "text": "You should avoid doing exercise for good health."}, {"key": "D", "text": "You should not do regular exercise."}], "correct": "B", "trans": "Dịch: Tập thể dục thường xuyên là một ý kiến hay.", "analysis": [{"word": "Option A", "badge": "không bao giờ nên tập", "badgeType": "wrong", "note": "= trái ngược với lời khuyên tích cực"}, {"word": "Option B", "badge": "You should + V-bare", "badgeType": "correct", "note": "= Bạn nên tập thể dục thường xuyên (chuẩn nghĩa 100%)"}, {"word": "Option C", "badge": "nên tránh tập thể dục", "badgeType": "wrong", "note": "= sai nghĩa nghiêm trọng"}, {"word": "Option D", "badge": "không nên tập thể dục", "badgeType": "wrong", "note": "= mang nghĩa phủ định sai"}], "whyCorrect": {"rule": "Cấu trúc khuyên nhủ tương đương:", "content": "Công thức chuyển đổi lời khuyên: <b>It's a good idea to do sth = You should do sth</b>. Phương án đúng: <span class='highlight-green-tag'>You should do exercise regularly</span>."}, "whyWrong": [{"word": "Option A", "reason": "sai nghĩa (should never do)."}, {"word": "Option C", "reason": "sai nghĩa (avoid doing)."}, {"word": "Option D", "reason": "sai nghĩa phủ định (should not do)."}]}, {"id": 59, "type": "Sắp xếp từ tạo câu hoàn chỉnh (Sentence Building)", "question": "Question 59: Every year/ we/ collect/ old/ books/ clothes/ help/ poor/ children/ mountainous areas.", "options": [{"key": "A", "text": "Every year, we collect old books and clothes to help poor children in mountainous areas."}, {"key": "B", "text": "Every year, collect we old books clothes help poor children mountainous areas."}, {"key": "C", "text": "We collect every year old books clothes to help children poor mountainous areas."}, {"key": "D", "text": "Every year, we help poor children collect old books and clothes mountainous areas."}], "correct": "A", "trans": "Dịch: Mỗi năm, chúng tôi quyên góp sách cũ và quần áo để giúp đỡ trẻ em nghèo ở vùng miền núi.", "analysis": [{"word": "Option A", "badge": "câu hoàn chỉnh chuẩn", "badgeType": "correct", "note": "= thêm liên từ 'and', giới từ 'to help', 'in mountainous areas'"}, {"word": "Option B", "badge": "sai trật tự từ", "badgeType": "wrong", "note": "= 'collect we' đảo lộn ngữ pháp và thiếu từ nối"}, {"word": "Option C", "badge": "vị trí trạng từ sai", "badgeType": "wrong", "note": "= 'children poor' sai vị trí tính từ"}, {"word": "Option D", "badge": "sai ý nghĩa", "badgeType": "wrong", "note": "= biến thành giúp trẻ em nghèo đi nhặt sách cũ"}], "whyCorrect": {"rule": "Quy tắc dựng câu hoàn chỉnh từ từ gợi ý:", "content": "Cần thêm từ nối <b>and</b> nối danh từ 'books and clothes', thêm <b>to</b> chỉ mục đích 'to help', thêm mạo từ/giới từ chỉ địa điểm 'in mountainous areas': <span class='highlight-green-tag'>Every year, we collect old books and clothes to help poor children in mountainous areas</span>."}, "whyWrong": [{"word": "Option B", "reason": "sai trật tự chủ ngữ - vị ngữ."}, {"word": "Option C", "reason": "tính từ 'poor' phải đứng trước danh từ 'children'."}, {"word": "Option D", "reason": "sai lệch bản chất nghĩa của hoạt động từ thiện."}]}, {"id": 60, "type": "Sắp xếp từ tạo câu hoàn chỉnh (Sentence Building)", "question": "Question 60: volunteer / in / community/ make / difference.", "options": [{"key": "A", "text": "Volunteer in community make difference."}, {"key": "B", "text": "Volunteers in the community make a difference."}, {"key": "C", "text": "Community volunteer make difference in."}, {"key": "D", "text": "Make volunteer difference in community."}], "correct": "B", "trans": "Dịch: Những tình nguyện viên trong cộng đồng tạo ra sự khác biệt tích cực.", "analysis": [{"word": "Option A", "badge": "chưa thêm mạo từ", "badgeType": "wrong", "note": "= thiếu mạo từ 'the' và 'a' trong make a difference"}, {"word": "Option B", "badge": "câu hoàn chỉnh chuẩn ngữ pháp", "badgeType": "correct", "note": "= Chủ ngữ số nhiều 'Volunteers' + in the community + make a difference"}, {"word": "Option C", "badge": "sai trật tự từ", "badgeType": "wrong", "note": "= giới từ 'in' để cuối câu là sai ngữ pháp"}, {"word": "Option D", "badge": "câu vô nghĩa", "badgeType": "wrong", "note": "= đảo động từ make lên đầu làm câu tối nghĩa"}], "whyCorrect": {"rule": "Thành ngữ 'make a difference':", "content": "Cụm thành ngữ chuẩn luôn có mạo từ 'a': <b>make a difference</b> (tạo nên sự khác biệt/ảnh hưởng tích cực). Chủ ngữ số nhiều cần thêm -s: <span class='highlight-green-tag'>Volunteers in the community make a difference</span>."}, "whyWrong": [{"word": "Option A", "reason": "thiếu mạo từ 'the' và 'a'."}, {"word": "Option C", "reason": "sai trật tự từ vựng."}, {"word": "Option D", "reason": "xáo trộn trật tự câu."}]}, {"id": 61, "type": "Tự luận chuyển trắc nghiệm (Sentence Formation)", "question": "Question 61: Complete the sentence with given words: Do / exercise / regularly / help / you / stay / healthy.", "options": [{"key": "A", "text": "Doing exercise regularly helps you stay healthy."}, {"key": "B", "text": "Do exercise regularly help you stay healthy."}, {"key": "C", "text": "Doing exercise regularly help you to staying healthy."}, {"key": "D", "text": "Did exercise regularly helps you stay healthy."}], "correct": "A", "trans": "Dịch: Tập thể dục thường xuyên giúp bạn giữ gìn sức khỏe.", "analysis": [{"word": "Option A", "badge": "Danh động từ làm chủ ngữ", "badgeType": "correct", "note": "= Doing exercise regularly (S số ít) + helps (V số ít) + you stay healthy"}, {"word": "Option B", "badge": "chưa đổi V-ing", "badgeType": "wrong", "note": "= 'Do' đứng đầu là câu mệnh lệnh, không làm chủ ngữ cho 'help'"}, {"word": "Option C", "badge": "chia sai động từ help", "badgeType": "wrong", "note": "= chủ ngữ Gerund là số ít nên help phải thêm -s"}, {"word": "Option D", "badge": "sai thì quá khứ", "badgeType": "wrong", "note": "= không dùng 'Did exercise' làm chủ ngữ cho chân lý hiển nhiên"}], "whyCorrect": {"rule": "Danh động từ (Gerund V-ing) làm chủ ngữ:", "content": "Động từ 'do' đứng đầu câu làm chủ ngữ phải chuyển thành V-ing: <b>Doing exercise regularly</b>. Chủ ngữ là một Gerund luôn được xem là ngôi thứ 3 số ít, nên động từ 'help' phải chia thêm -s thành <b>helps</b>. Cấu trúc: <b>help + O + V-bare</b>: <span class='highlight-green-tag'>Doing exercise regularly helps you stay healthy</span>."}, "whyWrong": [{"word": "Option B", "reason": "chưa chuyển 'do' thành danh động từ 'doing'."}, {"word": "Option C", "reason": "động từ 'help' chưa chia số ít (thiếu -s)."}, {"word": "Option D", "reason": "dùng 'did' là sai ngữ pháp."}]}, {"id": 62, "type": "Tự luận chuyển trắc nghiệm (Sentence Formation)", "question": "Question 62: Complete the sentence with given words: She/ enjoy/ read/ books.", "options": [{"key": "A", "text": "She enjoys reading books."}, {"key": "B", "text": "She enjoy reading books."}, {"key": "C", "text": "She enjoys to read books."}, {"key": "D", "text": "She is enjoying read books."}], "correct": "A", "trans": "Dịch: Cô ấy thích đọc sách.", "analysis": [{"word": "Option A", "badge": "enjoys + V-ing", "badgeType": "correct", "note": "= She (ngôi 3 số ít) + enjoys (thêm -s) + reading (V-ing) books"}, {"word": "Option B", "badge": "chưa chia động từ ngôi She", "badgeType": "wrong", "note": "= 'enjoy' thiếu -s cho chủ ngữ số ít She"}, {"word": "Option C", "badge": "sai cấu trúc enjoy to-V", "badgeType": "wrong", "note": "= động từ enjoy bắt buộc đi với V-ing, không đi với to-V"}, {"word": "Option D", "badge": "sai V nguyên thể sau enjoy", "badgeType": "wrong", "note": "= sau enjoy không được dùng động từ nguyên thể 'read'"}], "whyCorrect": {"rule": "Quy tắc chia động từ sau 'enjoy':", "content": "Động từ <b>enjoy</b> luôn luôn đi với danh động từ <b>V-ing</b> (enjoy doing sth). Với chủ ngữ ngôi thứ ba số ít <b>She</b> ở thì Hiện tại đơn, động từ 'enjoy' thêm -s thành <b>enjoys</b>: <span class='highlight-green-tag'>She enjoys reading books</span>."}, "whyWrong": [{"word": "Option B", "reason": "chủ ngữ 'She' thì enjoy phải thêm -s."}, {"word": "Option C", "reason": "enjoy không đi với to-V."}, {"word": "Option D", "reason": "sau enjoy không dùng động từ nguyên mẫu."}]}, {"id": 63, "type": "Tự luận chuyển trắc nghiệm (Sentence Formation)", "question": "Question 63: Complete the sentence with given words: She/ start/ the hobby/ when/ she/ 6.", "options": [{"key": "A", "text": "She started the hobby when she was 6."}, {"key": "B", "text": "She starts the hobby when she is 6."}, {"key": "C", "text": "She started the hobby when she 6."}, {"key": "D", "text": "She has started the hobby when she was 6."}], "correct": "A", "trans": "Dịch: Cô ấy đã bắt đầu sở thích này khi cô ấy mới 6 tuổi.", "analysis": [{"word": "Option A", "badge": "Quá khứ đơn chuẩn", "badgeType": "correct", "note": "= started (V2) + when she was 6 (to be quá khứ was)"}, {"word": "Option B", "badge": "chia hiện tại", "badgeType": "wrong", "note": "= mốc tuổi thơ trong quá khứ không dùng thì hiện tại"}, {"word": "Option C", "badge": "thiếu to be 'was'", "badgeType": "wrong", "note": "= thiếu động từ to be liên kết tuổi 'when she was 6'"}, {"word": "Option D", "badge": "hiện tại hoàn thành", "badgeType": "wrong", "note": "= mệnh đề 'when she was 6' chỉ thời điểm quá khứ, không dùng thì HTHT"}], "whyCorrect": {"rule": "Thì Quá khứ đơn với mốc tuổi thơ:", "content": "Mệnh đề chỉ thời gian trong quá khứ cần to be: <b>when she was 6</b> (khi cô ấy 6 tuổi). Hành động bắt đầu sở thích đã diễn ra và kết thúc trong quá khứ nên chia V2: <b>started</b> → <span class='highlight-green-tag'>She started the hobby when she was 6</span>."}, "whyWrong": [{"word": "Option B", "reason": "dùng thì hiện tại đơn sai ngữ cảnh quá khứ."}, {"word": "Option C", "reason": "thiếu động từ to be 'was'."}, {"word": "Option D", "reason": "mệnh đề thời gian xác định trong quá khứ không dùng thì hiện tại hoàn thành."}]}, {"id": 64, "type": "Tự luận chuyển trắc nghiệm (Sentence Formation)", "question": "Question 64: Complete the sentence with given words: Get/ enough/ sleep / night/ be/ good/ for/ you.", "options": [{"key": "A", "text": "Getting enough sleep at night is good for you."}, {"key": "B", "text": "Get enough sleep at night is good for you."}, {"key": "C", "text": "Getting enough sleep in night are good for you."}, {"key": "D", "text": "Getting enough sleep at night be good for you."}], "correct": "A", "trans": "Dịch: Ngủ đủ giấc vào ban đêm rất tốt cho bạn.", "analysis": [{"word": "Option A", "badge": "Gerund làm chủ ngữ + at night", "badgeType": "correct", "note": "= Getting enough sleep at night (S số ít) + is (to be chia số ít) + good for you"}, {"word": "Option B", "badge": "thiếu V-ing", "badgeType": "wrong", "note": "= động từ nguyên thể 'Get' không làm chủ ngữ cho 'is'"}, {"word": "Option C", "badge": "sai giới từ 'in night'", "badgeType": "wrong", "note": "= giới từ chuẩn là 'at night', to be chia số nhiều 'are' là sai"}, {"word": "Option D", "badge": "chưa chia động từ be", "badgeType": "wrong", "note": "= giữ nguyên 'be' là chưa chia thì"}], "whyCorrect": {"rule": "Gerund làm chủ ngữ & Cụm từ 'at night':", "content": "Động từ 'get' chuyển thành danh động từ <b>Getting</b> làm chủ ngữ (ngôi 3 số ít → to be chia là <b>is</b>). Cụm từ chỉ thời gian ban đêm là <b>at night</b>. Cấu trúc: <b>be good for sb</b> → <span class='highlight-green-tag'>Getting enough sleep at night is good for you</span>."}, "whyWrong": [{"word": "Option B", "reason": "'Get' chưa chuyển thành danh động từ 'Getting'."}, {"word": "Option C", "reason": "sai 'in night' (phải là at night) và sai to be 'are'."}, {"word": "Option D", "reason": "động từ 'be' chưa được chia."}]}, {"id": 65, "type": "Tự luận chuyển trắc nghiệm (Sentence Formation)", "question": "Question 65: Complete the sentence with given words: You/ can/ ride/ bike/ run/ or/ go/ swim.", "options": [{"key": "A", "text": "You can ride a bike, run, or go swimming."}, {"key": "B", "text": "You can riding a bike, running, or go swimming."}, {"key": "C", "text": "You can ride a bike, run, or go to swim."}, {"key": "D", "text": "You can ride bike, run, or swimming."}], "correct": "A", "trans": "Dịch: Bạn có thể đạp xe, chạy bộ, hoặc đi bơi.", "analysis": [{"word": "Option A", "badge": "can + V-bare & go swimming", "badgeType": "correct", "note": "= can + ride a bike, run, or go swimming (chuẩn cấu trúc song hành)"}, {"word": "Option B", "badge": "sau can dùng V-ing là sai", "badgeType": "wrong", "note": "= sau trợ động từ khuyết thiếu 'can' phải dùng V nguyên thể"}, {"word": "Option C", "badge": "go to swim không tự nhiên", "badgeType": "wrong", "note": "= cụm từ đi bơi chuẩn là 'go swimming'"}, {"word": "Option D", "badge": "thiếu mạo từ & thiếu động từ", "badgeType": "wrong", "note": "= thiếu 'a' trước bike và thiếu 'go'"}], "whyCorrect": {"rule": "Động từ khuyết thiếu can + V nguyên thể & Cụm 'go swimming':", "content": "Sau động từ khuyết thiếu <b>can</b>, các động từ được liệt kê đều ở dạng nguyên mẫu không to: <b>can ride a bike, run, or go swimming</b> (cụm từ 'go + V-ing' chỉ hoạt động thể thao) → <span class='highlight-green-tag'>You can ride a bike, run, or go swimming</span>."}, "whyWrong": [{"word": "Option B", "reason": "sau 'can' không đi với V-ing."}, {"word": "Option C", "reason": "người bản xứ dùng 'go swimming'."}, {"word": "Option D", "reason": "danh từ đếm được 'bike' cần mạo từ 'a' và thiếu động từ 'go'."}]}, {"id": 66, "type": "Viết lại câu tương đương (Sentence Transformation)", "question": "Question 66: Complete the second sentence so that it has a similar meaning to the first sentence, using the word in brackets:<br><b>She loves collecting old comic books. (fond)</b>", "options": [{"key": "A", "text": "She is fond of collecting old comic books."}, {"key": "B", "text": "She fond of collecting old comic books."}, {"key": "C", "text": "She is fond to collect old comic books."}, {"key": "D", "text": "She has fond of collecting old comic books."}], "correct": "A", "trans": "Dịch: Cô ấy rất thích sưu tầm những cuốn truyện tranh cũ.", "analysis": [{"word": "Option A", "badge": "be fond of + V-ing", "badgeType": "correct", "note": "= She is fond of collecting old comic books (chuẩn công thức 100%)"}, {"word": "Option B", "badge": "thiếu to be 'is'", "badgeType": "wrong", "note": "= 'fond' là tính từ, bắt buộc phải có to be đi kèm"}, {"word": "Option C", "badge": "sai giới từ 'to collect'", "badgeType": "wrong", "note": "= fond đi với giới từ 'of' chứ không đi với 'to'"}, {"word": "Option D", "badge": "dùng sai động từ 'has'", "badgeType": "wrong", "note": "= cấu trúc là to be fond of, không dùng has"}], "whyCorrect": {"rule": "Cấu trúc be fond of + V-ing:", "content": "Để viết lại câu diễn tả sự yêu thích với từ gợi ý 'fond': <b>love doing sth = be fond of doing sth</b>. Với chủ ngữ 'She', ta có: <span class='highlight-green-tag'>She is fond of collecting old comic books</span>."}, "whyWrong": [{"word": "Option B", "reason": "thiếu động từ to be 'is'."}, {"word": "Option C", "reason": "sai giới từ (phải là of + V-ing)."}, {"word": "Option D", "reason": "dùng động từ 'has' là sai ngữ pháp."}]}, {"id": 67, "type": "Viết lại câu tương đương (Sentence Transformation)", "question": "Question 67: Complete the second sentence so that it has a similar meaning to the first sentence, using the word in brackets:<br><b>She likes singing more than dancing. (prefers)</b>", "options": [{"key": "A", "text": "She prefers singing to dancing."}, {"key": "B", "text": "She prefers singing more than dancing."}, {"key": "C", "text": "She prefers to sing than dance."}, {"key": "D", "text": "She prefer singing to dancing."}], "correct": "A", "trans": "Dịch: Cô ấy thích ca hát hơn là khiêu vũ.", "analysis": [{"word": "Option A", "badge": "prefer V-ing to V-ing", "badgeType": "correct", "note": "= She prefers singing to dancing (chuẩn cấu trúc thích cái gì hơn cái gì)"}, {"word": "Option B", "badge": "thừa 'more than'", "badgeType": "wrong", "note": "= 'prefer' đã mang nghĩa thích hơn, không dùng kèm 'more than'"}, {"word": "Option C", "badge": "sai giới từ than", "badgeType": "wrong", "note": "= prefer đi với 'to', không đi với 'than'"}, {"word": "Option D", "badge": "chưa chia động từ prefer", "badgeType": "wrong", "note": "= chủ ngữ She thì prefer phải thêm -s thành prefers"}], "whyCorrect": {"rule": "Cấu trúc so sánh sở thích với 'prefer':", "content": "Công thức chuyển đổi: <b>like doing sth more than doing sth = prefer doing sth TO doing sth</b> (thích làm việc gì hơn việc gì). Động từ 'prefer' chia theo ngôi She thêm -s: <span class='highlight-green-tag'>She prefers singing to dancing</span>."}, "whyWrong": [{"word": "Option B", "reason": "dùng sai 'more than' sau prefer."}, {"word": "Option C", "reason": "dùng sai 'than' thay vì giới từ 'to'."}, {"word": "Option D", "reason": "động từ 'prefer' chưa chia ngôi thứ 3 số ít."}]}, {"id": 68, "type": "Viết lại câu tương đương (Sentence Transformation)", "question": "Question 68: Complete the second sentence so that it has a similar meaning to the first sentence, using the word in brackets:<br><b>There are over two hundred stamps in Nam's collection. (has)</b>", "options": [{"key": "A", "text": "Nam's collection has over two hundred stamps."}, {"key": "B", "text": "Nam has over two hundred stamps in collection."}, {"key": "C", "text": "There has over two hundred stamps in Nam's collection."}, {"key": "D", "text": "Nam's collection have over two hundred stamps."}], "correct": "A", "trans": "Dịch: Có hơn hai trăm con tem trong bộ sưu tập của Nam.", "analysis": [{"word": "Option A", "badge": "has chia theo collection", "badgeType": "correct", "note": "= Bộ sưu tập của Nam có hơn 200 con tem (chuẩn ngữ pháp và từ has)"}, {"word": "Option B", "badge": "thiếu từ sở hữu", "badgeType": "wrong", "note": "= thiếu 'his' trước collection"}, {"word": "Option C", "badge": "sai cấu trúc There has", "badgeType": "wrong", "note": "= chỉ có cấu trúc There is/There are, không có There has"}, {"word": "Option D", "badge": "sai động từ have", "badgeType": "wrong", "note": "= 'Nam's collection' là danh từ số ít nên phải dùng 'has' chứ không dùng 'have'"}], "whyCorrect": {"rule": "Chuyển đổi cấu trúc There are sang Has:", "content": "Chủ ngữ mới là <b>Nam's collection</b> (bộ sưu tập của Nam - danh từ số ít), động từ sở hữu đi kèm là <b>has</b>: <span class='highlight-green-tag'>Nam's collection has over two hundred stamps</span>."}, "whyWrong": [{"word": "Option B", "reason": "thiếu tính từ sở hữu 'his' trước collection."}, {"word": "Option C", "reason": "sai cấu trúc ngữ pháp 'There has'."}, {"word": "Option D", "reason": "chủ ngữ số ít 'collection' không đi với 'have'."}]}, {"id": 69, "type": "Viết lại câu tương đương (Sentence Transformation)", "question": "Question 69: Complete the second sentence so that it has a similar meaning to the first sentence:<br><b>My sister enjoys arranging flowers.</b><br>=> My sister's hobby ______________________________.", "options": [{"key": "A", "text": "is arranging flowers."}, {"key": "B", "text": "are arranging flowers."}, {"key": "C", "text": "is arrange flowers."}, {"key": "D", "text": "enjoys arranging flowers."}], "correct": "A", "trans": "Dịch: Chị gái tôi thích cắm hoa. => Sở thích của chị gái tôi là cắm hoa.", "analysis": [{"word": "is arranging flowers", "badge": "to be 'is' + Gerund", "badgeType": "correct", "note": "= My sister's hobby (S số ít) + is + arranging flowers (bổ ngữ V-ing)"}, {"word": "are arranging flowers", "badge": "sai to be 'are'", "badgeType": "wrong", "note": "= 'hobby' là danh từ số ít nên không đi với to be 'are'"}, {"word": "is arrange flowers", "badge": "sai động từ nguyên thể", "badgeType": "wrong", "note": "= sau to be 'is' bổ ngữ danh từ phải là V-ing (arranging)"}, {"word": "enjoys arranging flowers", "badge": "sai chủ ngữ vô lý", "badgeType": "wrong", "note": "= 'Sở thích của chị tôi' là sự vật, không thể có hành động 'enjoy' (thích thú)"}], "whyCorrect": {"rule": "Chuyển đổi động từ yêu thích sang cụm danh từ Hobby:", "content": "Chủ ngữ mới là danh từ số ít: <b>My sister's hobby</b> (Sở thích của chị tôi). Bổ ngữ chỉ tên của sở thích dùng to be 'is' kết hợp danh động từ V-ing: <span class='highlight-green-tag'>is arranging flowers</span>."}, "whyWrong": [{"word": "are arranging flowers", "reason": "'hobby' là số ít không đi với 'are'."}, {"word": "is arrange flowers", "reason": "sau 'is' phải dùng danh động từ 'arranging'."}, {"word": "enjoys arranging flowers", "reason": "sở thích là sự vật, không thể thực hiện hành động 'enjoy'."}]}, {"id": 70, "type": "Viết lại câu tương đương (Sentence Transformation)", "question": "Question 70: Complete the second sentence so that it has a similar meaning to the first sentence:<br><b>My brother loves playing tennis. I love playing tennis.</b><br>=> My brother and ______________________________.", "options": [{"key": "A", "text": "I both love playing tennis."}, {"key": "B", "text": "me love playing tennis."}, {"key": "C", "text": "I loves playing tennis."}, {"key": "D", "text": "I both loves to playing tennis."}], "correct": "A", "trans": "Dịch: Anh trai tôi thích chơi quần vợt. Tôi cũng thích chơi quần vợt. => Anh trai tôi và tôi đều thích chơi quần vợt.", "analysis": [{"word": "I both love playing tennis", "badge": "chủ ngữ I + động từ số nhiều", "badgeType": "correct", "note": "= My brother and I (S số nhiều) + both love (nguyên thể) playing tennis"}, {"word": "me love playing tennis", "badge": "dùng sai tân ngữ 'me'", "badgeType": "wrong", "note": "= vị trí chủ ngữ phải dùng đại từ nhân xưng 'I', không dùng 'me'"}, {"word": "I loves playing tennis", "badge": "sai chia động từ 'loves'", "badgeType": "wrong", "note": "= chủ ngữ có 2 người (My brother and I) là số nhiều nên động từ không thêm -s"}, {"word": "I both loves to playing...", "badge": "sai ngữ pháp kép", "badgeType": "wrong", "note": "= vừa sai thêm -s vừa sai cấu trúc 'to playing'"}], "whyCorrect": {"rule": "Kết hợp hai câu có cùng sở thích:", "content": "Hai câu có cùng hành động 'love playing tennis'. Khi kết hợp chủ ngữ: <b>My brother and I</b> (Anh trai tôi và tôi - đại từ chủ ngữ phải là 'I'). Chủ ngữ số nhiều đi với động từ nguyên thể <b>both love playing tennis</b> → <span class='highlight-green-tag'>My brother and I both love playing tennis</span>."}, "whyWrong": [{"word": "me love playing tennis", "reason": "đại từ làm chủ ngữ phải là 'I', không dùng tân ngữ 'me'."}, {"word": "I loves playing tennis", "reason": "chủ ngữ 2 người là số nhiều, động từ 'love' không thêm -s."}, {"word": "I both loves to playing...", "reason": "sai chia số ít 'loves' và sai 'to playing'."}]}];
+    const passagesData = {"hobby": {"title": "MY FAVORITE HOBBY", "badge": "ĐOẠN VĂN SẮP XẾP CÂU (CÂU 31 - 32)", "intro": "Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "content": "<p style=\"font-size: 1.15rem; font-weight: 800; color: #2D3436; margin-bottom: 12px;\">Playing the piano is my favorite hobby. ______________________________.</p><div style=\"background: #F8FAFC; border-radius: 14px; padding: 14px 18px; border: 1.5px solid #E2E8F0; line-height: 1.75; font-size: 1.02rem;\"><p><b>a.</b> I started learning how to play the piano two years ago.</p><p><b>b.</b> I often play the piano in my free time.</p><p><b>c.</b> It helps me relax and makes me happy.</p></div>"}, "eating": {"title": "HEALTHY EATING HABITS", "badge": "ĐOẠN VĂN SẮP XẾP CÂU (CÂU 33 - 34)", "intro": "Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "content": "<p style=\"font-size: 1.15rem; font-weight: 800; color: #2D3436; margin-bottom: 12px;\">Having a healthy diet is important. ______________________________.</p><div style=\"background: #F8FAFC; border-radius: 14px; padding: 14px 18px; border: 1.5px solid #E2E8F0; line-height: 1.75; font-size: 1.02rem;\"><p><b>a.</b> Moreover, you should drink enough water and shouldn't eat too many fried foods.</p><p><b>b.</b> Eating healthy helps you stay strong and active.</p><p><b>c.</b> It is important to eat a variety of foods, such as fruits, vegetables, and grains,...</p></div>"}, "community": {"title": "HELPING THE COMMUNITY", "badge": "ĐOẠN VĂN SẮP XẾP CÂU (CÂU 35 - 36)", "intro": "Put the sentences (a-c) in the correct order, then fill in the blank to make a logical text:", "content": "<p style=\"font-size: 1.15rem; font-weight: 800; color: #2D3436; margin-bottom: 12px;\">Community service is important. ______________________________.</p><div style=\"background: #F8FAFC; border-radius: 14px; padding: 14px 18px; border: 1.5px solid #E2E8F0; line-height: 1.75; font-size: 1.02rem;\"><p><b>a.</b> Last weekend, I joined a group of students to clean up the local park.</p><p><b>b.</b> We collected trash, planted trees, and painted benches to make the park more beautiful.</p><p><b>c.</b> I felt great to help the environment and make our community a better place.</p></div>"}, "garden": {"title": "MY GRANDPARENTS' GARDEN", "badge": "ĐOẠN VĂN ĐIỀN TỪ (CÂU 37 - 40)", "intro": "Read the following announcement and mark the letter A, B, C, or D to indicate the correct option that best fits each of the numbered blanks:", "content": "<div style=\"background: #F8FAFC; border-radius: 16px; padding: 18px 22px; border: 2px solid #E2E8F0; line-height: 1.9; font-size: 1.06rem;\"><p><b>1.</b> My grandparents <span class=\"passage-blank\">(37) ______</span> a big garden with a lot of vegetables.</p><p><b>2.</b> Vegetables come in different shapes, sizes, and <span class=\"passage-blank\">(38) ______</span>.</p><p><b>3.</b> They grow carrots and potatoes <span class=\"passage-blank\">(39) ______</span> the ground.</p><p><b>4.</b> My grandfather says that coloured vegetables are very good for health <span class=\"passage-blank\">(40) ______</span> they provide a lot of natural vitamins.</p></div>"}, "voluntary": {"title": "THE BENEFITS OF VOLUNTARY WORK", "badge": "BÀI ĐỌC HIỂU CHÍNH (CÂU 41 - 46)", "intro": "Read the following passage and mark the letter A, B, C, or D to indicate the correct answer to each of the questions:", "content": "<div style=\"background: #F8FAFC; border-radius: 18px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.95; font-size: 1.08rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 14px;\">Nowadays, volunteer work attracts a large number of attendants from different age groups because of its huge benefits. Firstly, voluntary work provides the <b style=\"color: #D63031; background: #FFEAEA; padding: 2px 6px; border-radius: 6px;\">adolescents</b> many precious opportunities to develop social skills, foster independence and form the ability to deal with difficulties in different situations. Secondly, every member will be taught how to work in a team, the way to make conversation or the responsibility of finishing a task.</p><p>The experience you gain will be <b style=\"color: #0984E3; background: #EBF3FA; padding: 2px 6px; border-radius: 6px;\">valuable</b> for your future, helping you tackle serious problems in later life. In addition, volunteer work can help us adapt to something new and make many new friends through regular activities of clubs or organizations. We can also have a chance to travel more and explore more interesting things we have not experienced before. In conclusion, it is very good to do voluntary work.</p></div>"}, "breakfast": {"title": "BREAKFAST - THE MOST IMPORTANT MEAL", "badge": "ĐOẠN VĂN ĐIỀN TỪ (CÂU 47 - 52)", "intro": "Read the following text and mark the letter A, B, C, or D to indicate the correct option that best fits each of the numbered blanks:", "content": "<div style=\"background: #F8FAFC; border-radius: 18px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.95; font-size: 1.08rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">Breakfast is the <span class=\"passage-blank\">(47) ______</span> important meal of the day. It provides the nutrients your body needs for good health, the calories it needs for <span class=\"passage-blank\">(48) ______</span> and helps to maintain your blood sugar level. Studies have shown that people who don't have breakfast have a low blood sugar level and are often slow, tired, hungry and <span class=\"passage-blank\">(49) ______</span> to concentrate.</p><p>Surprisingly, breakfast actually plays an important part in weight control. It's easier to <span class=\"passage-blank\">(50) ______</span> weight if you eat in the morning rather than later in the day. Dividing the day's calories <span class=\"passage-blank\">(51) ______</span> three meals helps you keep fit more efficiently than <span class=\"passage-blank\">(52) ______</span> breakfast and having two larger meals a day.</p></div>"}, "remedies": {"title": "NATURAL REMEDIES FOR HEALTHIER LIVES", "badge": "ĐOẠN VĂN CHÈN CÂU (CÂU 53 - 56)", "intro": "Four phrases/ sentences have been removed from the text below. For each question, mark the letter A, B, C or D to indicate the correct option that best fits each of the numbered blanks:", "content": "<div style=\"background: #F8FAFC; border-radius: 18px; padding: 20px 24px; border: 2px solid #E2E8F0; line-height: 1.95; font-size: 1.08rem; text-align: justify; color: #2D3436;\"><p style=\"margin-bottom: 12px;\">Many people today are trying to live healthier lives. <span class=\"passage-blank\">[53] ______</span> . Some people also turn to natural remedies when they feel sick. <span class=\"passage-blank\">[54] ______</span> For example, many drink ginger tea when they have a sore throat or feel cold.</p><p style=\"margin-bottom: 12px;\">However, not all natural remedies are safe for everyone. <span class=\"passage-blank\">[55] ______</span> It's important to ask a doctor before using herbs, especially if you are already taking medicine. Even something natural can be harmful when used in large amounts.</p><p><span class=\"passage-blank\">[56] ______</span> Choosing safe options and learning more about your health can help you feel better and avoid serious problems in the future.</p><div style=\"margin-top: 16px; background: #FFF9E6; border: 2px dashed #FDCB6E; border-radius: 14px; padding: 14px 18px; font-weight: 700; line-height: 1.7;\"><div style=\"color: #D35400; font-size: 1.05rem; margin-bottom: 8px;\">📋 Danh sách 4 câu cần lựa chọn để điền:</div><div style=\"color: #2D3436;\"><b>A.</b> Some herbs can cause side effects.</div><div style=\"color: #2D3436;\"><b>B.</b> They exercise regularly, drink more water, and try to eat well.</div><div style=\"color: #2D3436;\"><b>C.</b> They believe herbs can heal the body naturally.</div><div style=\"color: #2D3436;\"><b>D.</b> Taking care of your body is a smart habit.</div></div></div>"}};
+
+    const userAnswers = {};
+
+    function togglePassageView(qId) {
+      const el = document.getElementById('collapse_pass_' + qId);
+      const btn = document.getElementById('btn_toggle_' + qId);
+      if (el) {
+        if (el.style.display === 'block') {
+          el.style.display = 'none';
+          if (btn) btn.innerHTML = '📖 Xem lại đoạn văn bài đọc';
+        } else {
+          el.style.display = 'block';
+          if (btn) btn.innerHTML = '▲ Thu gọn đoạn văn bài đọc';
+        }
+      }
+    }
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      quizData.forEach((q) => {
+        // If this question is the first in a reading passage, render the full Reading Passage Block first!
+        if (q.is_first_in_passage && passagesData[q.is_first_in_passage]) {
+          const pass = passagesData[q.is_first_in_passage];
+          const passCard = document.createElement('div');
+          passCard.className = 'reading-passage-card';
+          passCard.id = 'passage_anchor_' + q.is_first_in_passage;
+          passCard.innerHTML = `
+            <div class="passage-header-top">
+              <div class="passage-title-badge">
+                <span>📖</span>
+                <span>${pass.title}</span>
+              </div>
+              <span class="passage-scope-badge">${pass.badge}</span>
+            </div>
+            <div class="passage-intro-text">
+              📌 ${pass.intro}
+            </div>
+            ${pass.content}
+            <div class="passage-prompt-banner">
+              <span>👉</span>
+              <span>Đọc kỹ đoạn văn phía trên và lần lượt chọn đáp án cho các câu hỏi theo thứ tự bên dưới:</span>
+            </div>
+          `;
+          container.appendChild(passCard);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `qCard_${q.id}`;
+
+        let visualHtml = '';
+        if (q.hasCustomVisual === 'no_alcohol_drive') {
+          visualHtml = `
+            <div class="visual-wrapper">
+              <div class="traffic-sign-box">
+                <div style="display:flex; align-items:center; gap:6px; font-size:2.2rem; z-index:1;">
+                  <span>🍷</span><span>🚗</span>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (q.hasCustomVisual === 'face_masks_required') {
+          visualHtml = `
+            <div class="visual-wrapper">
+              <div class="blue-circle-sign">
+                <div style="font-size: 2.8rem; margin-bottom: 4px;">😷</div>
+                <div style="font-size: 0.8rem; font-weight: 900; letter-spacing: 0.5px;">FACE MASKS<br>REQUIRED</div>
+              </div>
+            </div>
+          `;
+        } else if (q.hasCustomVisual === 'children_with_parents') {
+          visualHtml = `
+            <div class="visual-wrapper">
+              <div class="blue-circle-sign" style="background:#0984E3; border-radius: 20px;">
+                <div style="font-size: 2.8rem; margin-bottom: 4px;">👨‍👧</div>
+                <div style="font-size: 0.78rem; font-weight: 900; letter-spacing: 0.3px; background: #FFF; color: #0984E3; padding: 2px 8px; border-radius: 6px;">CHILDREN ONLY<br>WITH PARENTS</div>
+              </div>
+            </div>
+          `;
+        } else if (q.hasCustomVisual === 'keep_area_clean') {
+          visualHtml = `
+            <div class="visual-wrapper">
+              <div class="notice-plate-sign">
+                <div class="notice-plate-header">NOTICE</div>
+                <div class="notice-plate-body">
+                  <span>KEEP AREA CLEAN</span>
+                  <span style="font-size: 1.5rem;">🧹</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        // Quick reference collapsible passage for questions belonging to a passage
+        let quickPassageHtml = '';
+        if (q.passage_key && passagesData[q.passage_key]) {
+          quickPassageHtml = `
+            <div>
+              <button class="btn-toggle-passage" id="btn_toggle_${q.id}" onclick="togglePassageView(${q.id})">
+                📖 Xem lại đoạn văn bài đọc
+              </button>
+              <div class="collapse-passage-box" id="collapse_pass_${q.id}">
+                <div style="font-weight:900; color:#D35400; margin-bottom:8px;">📖 ${passagesData[q.passage_key].title}:</div>
+                ${passagesData[q.passage_key].content}
+              </div>
+            </div>
+          `;
+        }
+
+        let optionsHtml = '';
+        q.options.forEach(opt => {
+          optionsHtml += `
+            <button class="option-btn" id="opt_${q.id}_${opt.key}" onclick="handleSelect(${q.id}, '${opt.key}')">
+              <span class="opt-key">${opt.key}</span>
+              <span class="opt-text">${opt.text}</span>
+            </button>
+          `;
+        });
+
+        let cardsHtml = '';
+        q.analysis.forEach(item => {
+          const isCorrect = item.badgeType === 'correct';
+          cardsHtml += `
+            <div class="exp-card-item">
+              <div class="exp-card-header">
+                <span class="card-word ${isCorrect ? 'word-correct' : 'word-wrong'}">${item.word}</span>
+                <span class="badge-pill ${isCorrect ? 'badge-pill-correct' : 'badge-pill-wrong'}">${item.badge}</span>
+              </div>
+              <div class="card-meaning">${item.note}</div>
+            </div>
+          `;
+        });
+
+        let whyWrongHtml = '';
+        q.whyWrong.forEach(item => {
+          whyWrongHtml += `
+            <div style="margin-bottom: 6px;">
+              <span class="wrong-key-pill">${item.word}</span> – ${item.reason}
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="q-number-pill">Câu ${q.id} / 70</span>
+            <span class="q-tag-pill">${q.type}</span>
+          </div>
+          <div class="q-text">
+            ${q.question}
+            ${q.subtext ? `<div style="margin-top: 8px; color: #333; background: #F8F9FA; padding: 10px 14px; border-radius: 12px; border-left: 4px solid #0984E3;">${q.subtext}</div>` : ''}
+          </div>
+          ${visualHtml}
+          ${quickPassageHtml}
+          <div class="options-grid ${q.options.length === 4 ? 'grid-2col' : ''}">
+            ${optionsHtml}
+          </div>
+
+          <!-- Explanation Container -->
+          <div class="explanation-container" id="exp_${q.id}">
+            <div class="exp-title-row">
+              <span>⚡ GIẢI THÍCH CHI TIẾT</span>
+            </div>
+
+            <!-- Translation bubble -->
+            <div class="exp-trans-box">
+              <span style="font-size: 1.2rem;">💬</span>
+              <div>${q.trans}</div>
+            </div>
+
+            <!-- 1. Phân tích 4 đáp án -->
+            <div class="exp-section-title">
+              <span>1. Phân tích 4 đáp án:</span>
+            </div>
+            <div class="exp-grid-cards">
+              ${cardsHtml}
+            </div>
+
+            <!-- 2. Tại sao đúng? -->
+            <div class="exp-block">
+              <div style="font-weight: 900; color: #00BA66; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span>2. ✅ TẠI SAO ĐÚNG?</span>
+                <span class="rule-tag">${q.whyCorrect.rule}</span>
+              </div>
+              <div style="color: #2D3436; padding-left: 22px;">
+                ${q.whyCorrect.content}
+              </div>
+            </div>
+
+            <!-- 3. Tại sao sai? -->
+            <div class="exp-block" style="margin-bottom: 0;">
+              <div style="font-weight: 900; color: #FF4757; margin-bottom: 4px;">
+                <span>3. ❌ TẠI SAO SAI?</span>
+              </div>
+              <div style="color: #4A4A4A; padding-left: 22px;">
+                ${whyWrongHtml}
+              </div>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelect(questionId, selectedKey) {
+      const q = quizData.find(item => item.id === questionId);
+      if (!q) return;
+
+      userAnswers[questionId] = selectedKey;
+      const isCorrect = selectedKey === q.correct;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`opt_${q.id}_${opt.key}`);
+        if (!btn) return;
+        btn.classList.remove('selected-correct', 'selected-wrong', 'show-truth');
+
+        if (opt.key === selectedKey) {
+          if (isCorrect) {
+            btn.classList.add('selected-correct');
+          } else {
+            btn.classList.add('selected-wrong');
+          }
+        } else if (opt.key === q.correct) {
+          btn.classList.add('show-truth');
+        }
+      });
+
+      if (isCorrect) {
+        playDing();
+        triggerConfetti(45);
+      } else {
+        playWrongSound();
+      }
+
+      const expBox = document.getElementById(`exp_${q.id}`);
+      if (expBox) {
+        expBox.style.display = 'block';
+      }
+
+      updateTopStats();
+    }
+
+    function updateTopStats() {
+      let correct = 0;
+      let totalAnswered = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] !== undefined) {
+          totalAnswered++;
+          if (userAnswers[q.id] === q.correct) {
+            correct++;
+          }
+        }
+      });
+
+      document.getElementById('correctScore').textContent = correct;
+      document.getElementById('answeredCount').textContent = totalAnswered;
+
+      const pct = (totalAnswered / quizData.length) * 100;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+    }
+
+    function calculateAndShowResult() {
+      let correct = 0;
+      const total = quizData.length;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.correct) {
+          correct++;
+        }
+      });
+
+      const percentage = Math.round((correct / total) * 100);
+
+      document.getElementById('modalPercent').textContent = `${percentage}%`;
+      document.getElementById('modalFraction').textContent = `Đúng ${correct} / ${total} câu`;
+
+      const teacherQuoteEl = document.getElementById('modalTeacherQuote');
+      const trophyEl = document.getElementById('modalTrophy');
+
+      if (percentage < 50) {
+        trophyEl.textContent = '🌱';
+        teacherQuoteEl.textContent = '“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else if (percentage >= 50 && percentage < 90) {
+        trophyEl.textContent = '🌟';
+        teacherQuoteEl.textContent = '“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”';
+      } else {
+        trophyEl.textContent = '🏆';
+        teacherQuoteEl.textContent = '“Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!”';
+        triggerConfetti(120);
+      }
+
+      document.getElementById('scoreModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('scoreModal').classList.remove('active');
+    }
+
+    function restartQuiz() {
+      for (const k in userAnswers) {
+        delete userAnswers[k];
+      }
+      closeModal();
+      renderQuiz();
+      updateTopStats();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initAppNow() {
+      initBackgroundElements();
+      renderQuiz();
+      updateTopStats();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAppNow);
+    } else {
+      initAppNow();
+    }
+  </script>
+</body>
+</html>
